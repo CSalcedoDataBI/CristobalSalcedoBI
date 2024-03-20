@@ -1,34 +1,31 @@
-# Cristobal Salcedo - Portfolio de Análisis de Datos y BI
+# Cristobal Salcedo - BI & Data Analytics Projects
 
-## Acerca de Mí
+¡Hola! Soy Cristobal Salcedo, un ingeniero en producción y consultor de análisis de datos apasionado por descubrir insights a través de la visualización de datos y la inteligencia de negocio. En este espacio, comparto proyectos, desafíos resueltos y plantillas de visualización que pueden ayudarte a llevar tus habilidades en Power BI y herramientas de BI al siguiente nivel.
 
-¡Hola! Soy Cristobal Salcedo, Ingeniero en Producción y Consultor de Análisis de Datos con especialización en la Microsoft Power Platform. Este espacio está dedicado a compartir proyectos y visualizaciones que demuestran mis habilidades y conocimientos en BI.
+## Sobre mí
 
-![Tarjeta Dinamica](https://github.com/cristobalsalcedo90/PowerBI-Deneb/blob/aa1aa09433ee85df9e18996df0f1e829c67a1186/Tarjetas_Din%C3%A1micas/Tarjetas_Dinamicas_Tendencia_Deneb_VegaLite.PNG)
+- **Profesión**: Ingeniero en Producción y Consultor de Análisis de Datos
+- **Especializaciones**: Microsoft Power Platform y soluciones de BI
+- **Intereses**: Desarrollo de visualizaciones avanzadas y técnicas de modelado de datos
 
-## Proyectos Destacados
+## Repositorios Destacados
 
-### [PowerBI-Deneb](https://github.com/cristobalsalcedo90/PowerBI-Deneb)
-Plantillas y ejemplos de visualización de datos utilizando la gramática de gráficos Deneb para Power BI.
+- **[PowerBI-Deneb](https://github.com/cristobalsalcedo90/PowerBI-Deneb)**: Explora visualizaciones de datos innovadoras utilizando la gramática de visualización de Vega y Vega-Lite/Deneb en Power BI.
+- **[BI Challenges](https://github.com/cristobalsalcedo90/BI_Challenges)**: Mis soluciones a desafíos de análisis de datos, donde uso PySpark, Python y más.
+- **[DenebTemplate](https://github.com/cristobalsalcedo90/DenebTemplate)**: Plantillas de visuales en Vega y Vega-Lite para Power BI.
+- **[Power-BI](https://github.com/cristobalsalcedo90/Power-BI)**: Recursos y archivos de muestra para Power BI.
 
-### [BI Challenges](https://github.com/cristobalsalcedo90/BI_Challenges)
-Una serie de retos resueltos utilizando herramientas como Excel, Power Query, Python y PySpark para el análisis y procesamiento de datos.
+## Colaboraciones y Contacto
 
-Puedes ver más sobre mis contribuciones en mis repositorios de GitHub.
+Estoy abierto a colaboraciones y oportunidades que enriquezcan el mundo del análisis de datos. Si tienes alguna idea o proyecto en mente, ¡conversemos!
 
-## Contribuciones y Colaboración
+- [LinkedIn](https://www.linkedin.com/in/cristobal-salcedo)
+- [Correo](mailto:csalcedo90@gmail.com)
 
-Estoy abierto a colaborar en proyectos interesantes y desafiantes. Si tienes alguna idea o quieres discutir posibles colaboraciones, no dudes en contactarme.
+## Contribuciones
 
-## Cómo Contactarme
-
-- LinkedIn: [Cristobal Salcedo](https://www.linkedin.com/in/cristobal-salcedo)
-- Correo: [csalcedo90@gmail.com](mailto:csalcedo90@gmail.com)
-
-## Agradecimientos
-
-Agradezco a la comunidad de análisis de datos y BI por su constante apoyo y por proveer desafíos que impulsan mi crecimiento profesional.
+Tus contribuciones son bienvenidas! Si deseas mejorar alguno de los proyectos o tienes sugerencias, no dudes en hacer un fork del repositorio y enviar tus pull requests. Para cualquier discusión adicional, puedes abrir un issue o contactarme directamente.
 
 ---
 
-Nota: Asegúrate de reemplazar `URL_DE_LA_IMAGEN_DE_VISUALIZACIÓN` con la URL de una imagen que quieras destacar en tu perfil de GitHub. Puede ser una captura de pantalla de uno de tus dashboards o visualizaciones en Power BI.
+⭐ No olvides dar estrellas a los repositorios que encuentres útiles. ¡Esto ayuda a que más personas los encuentren y aprendan de ellos!
