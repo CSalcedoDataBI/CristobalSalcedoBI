@@ -10,7 +10,8 @@
 
 ## Repositorios Destacados
 
-- **[PowerBI-Deneb](https://github.com/cristobalsalcedo90/PowerBI-Deneb)**: Explora visualizaciones de datos innovadoras utilizando la gramática de visualización de Vega y Vega-Lite/Deneb en Power BI.
+- **[PowerBI-Deneb](
+https://github.com/cristobalsalcedo90/PowerBI-Deneb)**: Explora visualizaciones de datos innovadoras utilizando la gramática de visualización de Vega y Vega-Lite/Deneb en Power BI.
 - **[BI Challenges](https://github.com/cristobalsalcedo90/BI_Challenges)**: Mis soluciones a desafíos de análisis de datos, donde uso PySpark, Python y más.
 - **[DenebTemplate](https://github.com/cristobalsalcedo90/DenebTemplate)**: Plantillas de visuales en Vega y Vega-Lite para Power BI.
 - **[Power-BI](https://github.com/cristobalsalcedo90/Power-BI)**: Recursos y archivos de muestra para Power BI.
@@ -20,7 +21,7 @@
 Estoy abierto a colaboraciones y oportunidades que enriquezcan el mundo del análisis de datos. Si tienes alguna idea o proyecto en mente, ¡conversemos!
 
 - [LinkedIn](https://www.linkedin.com/in/cristobal-salcedo)
-- [Correo](mailto:csalcedo90@gmail.com)
+- Correo: [csalcedo90@gmail.com](mailto:csalcedo90@gmail.com)
 
 ## Contribuciones
 
