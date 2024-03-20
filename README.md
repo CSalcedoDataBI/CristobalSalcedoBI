@@ -4,7 +4,7 @@
 
 ¡Hola! Soy Cristobal Salcedo, Ingeniero en Producción y Consultor de Análisis de Datos con especialización en la Microsoft Power Platform. Este espacio está dedicado a compartir proyectos y visualizaciones que demuestran mis habilidades y conocimientos en BI.
 
-![Vista previa de un proyecto]([URL_DE_LA_IMAGEN_DE_VISUALIZACIÓN](https://github.com/cristobalsalcedo90/PowerBI-Deneb/blob/5dcd7dee6dcd75f6a9a806f3ee82ea36bd01fe2c/Tarjetas_Din%C3%A1micas/Tarjetas_Dinamicas_Tendencia_Deneb_VegaLite.PNG))
+![Vista previa de un proyecto]([URL_DE_LA_IMAGEN_DE_VISUALIZACIÓN](https://github.com/cristobalsalcedo90/PowerBI-Deneb/blob/5dcd7dee6dcd75f6a9a806f3ee82ea36bd01fe2c/Tarjetas_Din%C3%A1micas/Tarjetas_Dinamicas_Tendencia_Deneb_VegaLite.PNG)
 
 ## Proyectos Destacados
 
