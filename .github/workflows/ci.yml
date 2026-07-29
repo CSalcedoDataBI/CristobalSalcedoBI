@@ -1,0 +1,80 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'telemetry/data/**'
+      - 'telemetry/summary.json'
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install linting tools
+        run: pip install pylint pycodestyle
+
+      - name: Lint snapshot.py
+        run: |
+          pycodestyle --max-line-length=100 telemetry/scripts/snapshot.py
+          pylint telemetry/scripts/snapshot.py \
+            --disable=missing-module-docstring,missing-function-docstring \
+            --max-line-length=100 \
+            --fail-under=8.0
+
+      - name: Run tests
+        run: python -m pytest telemetry/scripts/test_snapshot.py -v --tb=short
+
+      - name: Validate repos.json
+        run: |
+          python - <<'EOF'
+          import json, sys
+          with open("telemetry/repos.json") as f:
+              cfg = json.load(f)
+          assert "owner" in cfg, "missing 'owner'"
+          assert "repos" in cfg, "missing 'repos'"
+          for r in cfg["repos"]:
+              assert "name" in r, f"repo missing 'name': {r}"
+          print(f"repos.json OK: {len(cfg['repos'])} repos for owner '{cfg['owner']}'")
+          EOF
+
+      - name: Validate dashboard HTML
+        run: |
+          python - <<'EOF'
+          from html.parser import HTMLParser
+          import sys
+
+          class Validator(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.errors = []
+
+          with open("docs/index.html", encoding="utf-8") as f:
+              content = f.read()
+
+          v = Validator()
+          v.feed(content)
+          if v.errors:
+              for e in v.errors:
+                  print(f"ERROR: {e}", file=sys.stderr)
+              sys.exit(1)
+          print("docs/index.html OK")
+          EOF
