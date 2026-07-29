@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Telemetry — CSalcedoDataBI</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0d1117;
+      color: #c9d1d9;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+    a { color: #58a6ff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    h1 { font-size: 1.6rem; font-weight: 600; color: #f0f6fc; margin-bottom: 0.25rem; }
+    .subtitle { font-size: 0.85rem; color: #8b949e; margin-bottom: 2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    /* ── Summary cards ── */
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+    .card {
+      background: #161b22; border: 1px solid #30363d; border-radius: 8px;
+      padding: 1rem 1.25rem;
+    }
+    .card-label { font-size: 0.75rem; color: #8b949e; text-transform: uppercase; letter-spacing: .05em; }
+    .card-value { font-size: 1.6rem; font-weight: 700; color: #f0f6fc; line-height: 1.2; }
+    .card-sub   { font-size: 0.75rem; color: #8b949e; }
+
+    /* ── Table ── */
+    .table-wrap { overflow-x: auto; margin-bottom: 2.5rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    thead th {
+      background: #161b22; border-bottom: 1px solid #30363d;
+      padding: 0.6rem 0.75rem; text-align: left; color: #8b949e;
+      font-weight: 500; white-space: nowrap;
+    }
+    tbody tr { border-bottom: 1px solid #21262d; }
+    tbody tr:hover { background: #161b22; }
+    tbody td { padding: 0.55rem 0.75rem; }
+    .badge {
+      display: inline-block; padding: 2px 7px; border-radius: 20px;
+      font-size: 0.72rem; font-weight: 600;
+    }
+    .badge-green  { background: #1a4d2e; color: #56d364; }
+    .badge-yellow { background: #3d2f00; color: #e3b341; }
+    .badge-gray   { background: #21262d; color: #8b949e; }
+
+    /* ── Charts ── */
+    .section-title { font-size: 1rem; font-weight: 600; color: #f0f6fc; margin: 2rem 0 1rem; }
+    .charts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+    .chart-box {
+      background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 1.25rem;
+    }
+    .chart-box h3 { font-size: 0.85rem; color: #c9d1d9; margin-bottom: 1rem; font-weight: 500; }
+    .chart-box canvas { width: 100% !important; }
+
+    /* ── Info banner ── */
+    .info-banner {
+      background: #161b22; border: 1px solid #30363d; border-left: 3px solid #58a6ff;
+      border-radius: 6px; padding: 0.75rem 1rem; font-size: 0.8rem; color: #8b949e;
+      margin-bottom: 2rem;
+    }
+    .info-banner strong { color: #c9d1d9; }
+
+    /* ── Footer ── */
+    footer { margin-top: 3rem; font-size: 0.75rem; color: #8b949e; text-align: center; }
+
+    .loading { text-align: center; padding: 3rem; color: #8b949e; }
+    .error   { color: #f85149; text-align: center; padding: 3rem; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Portfolio Telemetry</h1>
+  <p class="subtitle" id="subtitle">Loading data&hellip;</p>
+
+  <div class="info-banner">
+    <strong>CI normalization:</strong> GitHub Actions clones inflate raw clone counts.
+    <em>Human clones</em> = raw clones &minus; Actions runs for that day.
+    Unique-cloner counts are kept as-is (CI runners share IPs, so they count as very few uniques).
+  </div>
+
+  <div class="cards" id="cards"></div>
+
+  <div class="table-wrap">
+    <table id="repo-table">
+      <thead>
+        <tr>
+          <th>Repo</th>
+          <th>28-day views</th>
+          <th>Unique viewers</th>
+          <th>28-day clones (raw)</th>
+          <th>CI runs (28d)</th>
+          <th>Human clones (28d)</th>
+          <th>Human uniques (28d)</th>
+          <th>Snapshots</th>
+        </tr>
+      </thead>
+      <tbody id="repo-tbody"><tr><td colspan="8" class="loading">Loading&hellip;</td></tr></tbody>
+    </table>
+  </div>
+
+  <div class="section-title">Human clones over time (CI-normalized)</div>
+  <div class="charts-grid" id="clone-charts"></div>
+
+  <div class="section-title">Page views over time</div>
+  <div class="charts-grid" id="view-charts"></div>
+
+  <footer>
+    Data collected by
+    <a href="https://github.com/CSalcedoDataBI/CristobalSalcedoBI/tree/main/telemetry">
+      telemetry-snapshot.yml
+    </a>
+    &middot; Updates daily at 01:30 UTC &middot;
+    Source: <a href="https://docs.github.com/en/rest/metrics/traffic">GitHub Traffic API</a>
+  </footer>
+</div>
+
+<script>
+/* ── Config ── */
+const OWNER = "CSalcedoDataBI";
+const BASE = "telemetry/data";    // relative to Pages root
+const REPOS_JSON = "telemetry/repos.json";
+
+/* ── Chart defaults ── */
+Chart.defaults.color = "#8b949e";
+Chart.defaults.borderColor = "#30363d";
+Chart.defaults.font.family = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+Chart.defaults.font.size = 11;
+
+async function fetchJSON(url) {
+  const r = await fetch(url);
+  if (!r.ok) throw new Error(`${r.status} ${r.url}`);
+  return r.json();
+}
+
+function sum(arr, key) { return arr.reduce((a, b) => a + (b[key] || 0), 0); }
+
+function last28(snapshots) {
+  const cutoff = new Date();
+  cutoff.setDate(cutoff.getDate() - 28);
+  const cutStr = cutoff.toISOString().slice(0, 10);
+  return snapshots.filter(s => s.date >= cutStr);
+}
+
+function colorForRepo(i) {
+  const palette = [
+    "#58a6ff", "#56d364", "#e3b341", "#f85149",
+    "#79c0ff", "#3fb950", "#d29922", "#ff7b72",
+    "#a5d6ff", "#7ee787",
+  ];
+  return palette[i % palette.length];
+}
+
+function makeChart(canvasId, labels, datasets, yLabel) {
+  const ctx = document.getElementById(canvasId).getContext("2d");
+  return new Chart(ctx, {
+    type: "line",
+    data: { labels, datasets },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: datasets.length > 1, position: "top" },
+        tooltip: { mode: "index", intersect: false },
+      },
+      scales: {
+        x: { ticks: { maxTicksLimit: 14, maxRotation: 45 } },
+        y: { beginAtZero: true, title: { display: true, text: yLabel } },
+      },
+      interaction: { mode: "nearest", axis: "x", intersect: false },
+    },
+  });
+}
+
+async function buildDashboard() {
+  const reposCfg = await fetchJSON(REPOS_JSON);
+  const repoNames = reposCfg.repos.map(r => r.name);
+
+  /* Load all repo data in parallel */
+  const dataResults = await Promise.allSettled(
+    repoNames.map(name => fetchJSON(`${BASE}/${name}.json`))
+  );
+
+  const allData = [];
+  for (let i = 0; i < repoNames.length; i++) {
+    if (dataResults[i].status === "fulfilled") {
+      allData.push(dataResults[i].value);
+    } else {
+      allData.push({ repo: repoNames[i], owner: OWNER, snapshots: [] });
+    }
+  }
+
+  /* ── Summary cards ── */
+  const totalHumanClones = sum(
+    allData.flatMap(d => last28(d.snapshots)), "human_clones_count"
+  );
+  const totalViews = sum(
+    allData.flatMap(d => last28(d.snapshots)), "views_count"
+  );
+  const totalUniqueViewers = sum(
+    allData.flatMap(d => last28(d.snapshots)), "views_uniques"
+  );
+  const totalCIRuns = sum(
+    allData.flatMap(d => last28(d.snapshots)), "actions_runs"
+  );
+
+  const lastDate = allData
+    .flatMap(d => d.snapshots)
+    .map(s => s.date)
+    .sort()
+    .at(-1) || "–";
+
+  document.getElementById("subtitle").textContent =
+    `Last snapshot: ${lastDate} · 28-day window · ${repoNames.length} repos`;
+
+  const cardsEl = document.getElementById("cards");
+  const cardData = [
+    { label: "Human clones (28d)", value: totalHumanClones.toLocaleString(), sub: "CI-normalized" },
+    { label: "Page views (28d)",   value: totalViews.toLocaleString(),        sub: "across all repos" },
+    { label: "Unique viewers",     value: totalUniqueViewers.toLocaleString(), sub: "28d" },
+    { label: "CI runs subtracted", value: totalCIRuns.toLocaleString(),        sub: "28d, all repos" },
+  ];
+  cardsEl.innerHTML = cardData.map(c => `
+    <div class="card">
+      <div class="card-label">${c.label}</div>
+      <div class="card-value">${c.value}</div>
+      <div class="card-sub">${c.sub}</div>
+    </div>`).join("");
+
+  /* ── Table ── */
+  const tbody = document.getElementById("repo-tbody");
+  tbody.innerHTML = "";
+  for (const d of allData) {
+    const w = last28(d.snapshots);
+    const views     = sum(w, "views_count");
+    const viewUniq  = sum(w, "views_uniques");
+    const rawClones = sum(w, "clones_count");
+    const ciRuns    = sum(w, "actions_runs");
+    const human     = sum(w, "human_clones_count");
+    const humanUniq = sum(w, "human_clones_uniques");
+    const snaps     = d.snapshots.length;
+
+    const badge = human > 50 ? "badge-green" : human > 10 ? "badge-yellow" : "badge-gray";
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td><a href="https://github.com/${OWNER}/${d.repo}" target="_blank">${d.repo}</a></td>
+      <td>${views.toLocaleString()}</td>
+      <td>${viewUniq.toLocaleString()}</td>
+      <td>${rawClones.toLocaleString()}</td>
+      <td>${ciRuns.toLocaleString()}</td>
+      <td><span class="badge ${badge}">${human.toLocaleString()}</span></td>
+      <td>${humanUniq.toLocaleString()}</td>
+      <td>${snaps}</td>`;
+    tbody.appendChild(tr);
+  }
+
+  /* ── Charts: one per repo ── */
+  const cloneChartsEl = document.getElementById("clone-charts");
+  const viewChartsEl  = document.getElementById("view-charts");
+
+  for (let i = 0; i < allData.length; i++) {
+    const d = allData[i];
+    const snaps = d.snapshots.slice(-28);
+    if (!snaps.length) continue;
+
+    const labels = snaps.map(s => s.date.slice(5)); // MM-DD
+    const color  = colorForRepo(i);
+
+    /* Clone chart */
+    const cId = `clone-chart-${i}`;
+    const cBox = document.createElement("div");
+    cBox.className = "chart-box";
+    cBox.innerHTML = `<h3>${d.repo}</h3><canvas id="${cId}" height="120"></canvas>`;
+    cloneChartsEl.appendChild(cBox);
+    makeChart(cId, labels, [
+      {
+        label: "Human clones",
+        data: snaps.map(s => s.human_clones_count),
+        borderColor: color, backgroundColor: color + "33",
+        fill: true, tension: 0.3, pointRadius: 2,
+      },
+      {
+        label: "Raw clones",
+        data: snaps.map(s => s.clones_count),
+        borderColor: "#8b949e", backgroundColor: "transparent",
+        borderDash: [4, 4], tension: 0.3, pointRadius: 0,
+      },
+    ], "clones / day");
+
+    /* Views chart */
+    const vId = `view-chart-${i}`;
+    const vBox = document.createElement("div");
+    vBox.className = "chart-box";
+    vBox.innerHTML = `<h3>${d.repo}</h3><canvas id="${vId}" height="120"></canvas>`;
+    viewChartsEl.appendChild(vBox);
+    makeChart(vId, labels, [
+      {
+        label: "Views",
+        data: snaps.map(s => s.views_count),
+        borderColor: color, backgroundColor: color + "33",
+        fill: true, tension: 0.3, pointRadius: 2,
+      },
+      {
+        label: "Unique viewers",
+        data: snaps.map(s => s.views_uniques),
+        borderColor: color + "99", backgroundColor: "transparent",
+        borderDash: [3, 3], tension: 0.3, pointRadius: 0,
+      },
+    ], "views / day");
+  }
+}
+
+buildDashboard().catch(err => {
+  document.getElementById("cards").innerHTML =
+    `<p class="error">Failed to load telemetry data: ${err.message}<br>
+    Make sure the daily snapshot workflow has run at least once.</p>`;
+  document.getElementById("repo-tbody").innerHTML =
+    `<tr><td colspan="8" class="error">${err.message}</td></tr>`;
+});
+</script>
+</body>
+</html>
