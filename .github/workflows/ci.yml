@@ -1,13 +1,10 @@
 name: CI
 
 on:
+  # Gate on the PR only. A push to main is always something already gated here,
+  # so re-running the identical job after merge just doubles the runs per change.
   pull_request:
     branches: [main]
-  push:
-    branches: [main]
-    paths-ignore:
-      - 'telemetry/data/**'
-      - 'telemetry/summary.json'
 
 concurrency:
   group: ci-${{ github.ref }}
@@ -58,22 +55,67 @@ jobs:
       - name: Validate dashboard HTML
         run: |
           python - <<'EOF'
+          # Asserts the ids the dashboard's own JS queries actually exist, and that
+          # every element it opens is closed. The previous version of this step
+          # collected errors into a list nothing ever appended to, so it passed
+          # unconditionally - including on an empty file.
           from html.parser import HTMLParser
           import sys
 
-          class Validator(HTMLParser):
+          # Every id passed to document.getElementById() in docs/index.html.
+          REQUIRED_IDS = {"subtitle", "cards", "repo-tbody", "clone-charts", "view-charts"}
+          VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input",
+                  "link", "meta", "source", "track", "wbr"}
+
+          class Collector(HTMLParser):
               def __init__(self):
                   super().__init__()
+                  self.ids = set()
+                  self.stack = []
                   self.errors = []
+
+              def handle_starttag(self, tag, attrs):
+                  for k, v in attrs:
+                      if k == "id" and v:
+                          self.ids.add(v)
+                  if tag not in VOID:
+                      self.stack.append(tag)
+
+              def handle_endtag(self, tag):
+                  if tag in VOID:
+                      return
+                  if not self.stack:
+                      self.errors.append(f"</{tag}> with nothing open")
+                  elif self.stack[-1] != tag:
+                      self.errors.append(f"</{tag}> closes <{self.stack[-1]}>")
+                      if tag in self.stack:
+                          while self.stack and self.stack.pop() != tag:
+                              pass
+                  else:
+                      self.stack.pop()
+
+              def error(self, message):
+                  self.errors.append(message)
 
           with open("docs/index.html", encoding="utf-8") as f:
               content = f.read()
+          if not content.strip():
+              print("ERROR: docs/index.html is empty", file=sys.stderr)
+              sys.exit(1)
 
-          v = Validator()
-          v.feed(content)
-          if v.errors:
-              for e in v.errors:
+          c = Collector()
+          c.feed(content)
+          c.close()
+
+          missing = REQUIRED_IDS - c.ids
+          if missing:
+              c.errors.append(f"missing required id(s): {sorted(missing)}")
+          if c.stack:
+              c.errors.append(f"unclosed tag(s): {c.stack}")
+
+          if c.errors:
+              for e in c.errors:
                   print(f"ERROR: {e}", file=sys.stderr)
               sys.exit(1)
-          print("docs/index.html OK")
+          print(f"docs/index.html OK - {len(c.ids)} ids, all {len(REQUIRED_IDS)} required present")
           EOF

@@ -35,12 +35,16 @@ jobs:
       - name: Snapshot portfolio traffic
         env:
           GH_TOKEN: ${{ secrets.PORTFOLIO_TELEMETRY_TOKEN }}
+          # Passed through env, never interpolated into the shell: a ${{ }} expression
+          # inside run: is executed as code, so a crafted dispatch input would run
+          # arbitrary commands on the runner.
+          SNAPSHOT_DATE: ${{ inputs.date }}
         run: |
-          ARGS=""
-          if [ -n "${{ inputs.date }}" ]; then
-            ARGS="--date ${{ inputs.date }}"
+          if [ -n "$SNAPSHOT_DATE" ]; then
+            python telemetry/scripts/snapshot.py --date "$SNAPSHOT_DATE"
+          else
+            python telemetry/scripts/snapshot.py
           fi
-          python telemetry/scripts/snapshot.py $ARGS
 
       - name: Commit telemetry data
         run: |
