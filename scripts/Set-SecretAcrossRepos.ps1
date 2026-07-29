@@ -8,10 +8,16 @@
     need therefore has to exist in each of them. This script removes the manual work, not
     the duplication.
 
-    The secret value is never accepted as a parameter and never written to a command line.
-    It is read from an environment variable named by the caller and piped to `gh secret set`
-    through stdin, so it does not appear in shell history, in the process command line, or
-    anywhere in this repository.
+    The secret value is never accepted as a parameter of this script: it is read from an
+    environment variable named by the caller, so it is never typed, never lands in shell
+    history, and is never stored in this repository.
+
+    It IS passed to `gh secret set --body`, which means it appears in that child process's
+    command line for the duration of the call. That is a deliberate trade: piping via stdin
+    would avoid it, but PowerShell appends a newline to a pipe and gh's stdin trimming is
+    undocumented - a secret silently storing a trailing newline fails authentication with no
+    useful error. On a single-user workstation the transient command line is the lesser risk.
+    On a shared or multi-tenant host, prefer setting the secrets through the web UI.
 
 .PARAMETER Name
     The secret name, e.g. CLAUDE_CODE_OAUTH_TOKEN. Must match what the workflows reference.
@@ -108,8 +114,13 @@ Write-Host ""
 $ok = 0
 $failed = @()
 foreach ($r in $targets) {
-    # stdin, not --body: --body would place the secret in the process command line.
-    $secret | gh secret set $Name --repo $r --app actions 2>&1 | Out-Null
+    # --body, deliberately, not a stdin pipe. Piping from PowerShell appends a newline,
+    # and whether `gh secret set` strips a trailing newline from stdin is undocumented.
+    # A secret silently storing a trailing "`n" fails authentication with no useful error,
+    # which is a worse outcome than the value appearing in this process's own command line
+    # on a single-user workstation. Keep it out of shell history by never typing it: the
+    # value comes from an environment variable, never from a parameter.
+    gh secret set $Name --repo $r --app actions --body $secret 2>&1 | Out-Null
     if ($LASTEXITCODE -eq 0) {
         Write-Host ("  OK    {0}" -f $r) -ForegroundColor Green
         $ok++
