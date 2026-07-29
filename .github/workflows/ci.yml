@@ -27,10 +27,9 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-          cache: 'pip'
 
       - name: Install linting tools
-        run: pip install pylint pycodestyle
+        run: pip install pylint pycodestyle pytest
 
       - name: Lint snapshot.py
         run: |
