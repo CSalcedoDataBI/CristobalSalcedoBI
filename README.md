@@ -28,7 +28,7 @@
 
 Este repositorio, además del índice de arriba, mide cuánto tráfico reciben los repos públicos de la cuenta:
 
-- **`telemetry/`** — `snapshot.py` toma cada día una foto de las métricas de tráfico (vistas y clones) de los repos listados en `telemetry/repos.json`, normalizando los datos que la API de GitHub sólo conserva 14 días.
+- **`telemetry/`** — `snapshot.py` toma cada día una foto de las métricas de tráfico de los repos listados en `telemetry/repos.json` (vistas, clones, referrers y páginas más visitadas) y normaliza los clones restando las ejecuciones de GitHub Actions, porque los runners de CI inflan la señal. Así el histórico refleja tráfico humano y sobrevive a la ventana corta que expone la API de tráfico.
 - **`.github/workflows/telemetry-snapshot.yml`** — corre a las 01:30 UTC (los datos del día anterior ya están disponibles a esa hora) y commitea el snapshot. También se puede lanzar a mano con `workflow_dispatch`.
 - **`docs/`** — el histórico acumulado (`docs/telemetry/`) y el dashboard que lo grafica (`docs/index.html`).
 
