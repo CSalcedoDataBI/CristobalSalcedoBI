@@ -22,6 +22,14 @@ import time
 BASE_URL = "https://api.github.com"
 REPO_ROOT = Path(__file__).parent.parent.parent
 
+# Outputs go INSIDE docs/, because docs/ is what GitHub Pages publishes. Writing
+# them to telemetry/ put every file outside the published tree, so the dashboard's
+# relative fetches ("telemetry/data/<repo>.json") resolved to paths Pages does not
+# serve and every request 404'd - a dashboard that could never show data.
+# Config stays in telemetry/repos.json (hand-edited input); a copy is emitted here
+# so the page can read it over HTTP like the rest.
+OUTPUT_DIR = REPO_ROOT / "docs" / "telemetry"
+
 
 def gh_get(path: str, token: str) -> dict | list | None:
     """Authenticated GitHub API GET request. Returns None on error."""
@@ -188,7 +196,15 @@ def main(argv: list[str] | None = None) -> int:
         config = json.load(f)
 
     owner = config["owner"]
-    data_dir = REPO_ROOT / "telemetry" / "data"
+    data_dir = OUTPUT_DIR / "data"
+
+    # The page fetches the repo list too, so mirror the config into the published
+    # tree. telemetry/repos.json stays the source of truth that a human edits.
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    with open(config_file, encoding="utf-8") as f:
+        _cfg_raw = f.read()
+    with open(OUTPUT_DIR / "repos.json", "w", encoding="utf-8") as f:
+        f.write(_cfg_raw)
 
     print(f"Snapshotting {len(config['repos'])} repos for {date_str} (dry_run={args.dry_run})")
     results = []
@@ -213,7 +229,7 @@ def main(argv: list[str] | None = None) -> int:
                 for r in results
             ],
         }
-        summary_file = REPO_ROOT / "telemetry" / "summary.json"
+        summary_file = OUTPUT_DIR / "summary.json"
         with open(summary_file, "w", encoding="utf-8") as f:
             json.dump(summary, f, indent=2)
 

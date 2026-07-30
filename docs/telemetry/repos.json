@@ -1,0 +1,41 @@
+{
+  "owner": "CSalcedoDataBI",
+  "repos": [
+    {
+      "name": "agentic-board",
+      "description": "Quota-aware review-gated coordinator for GitHub Projects"
+    },
+    {
+      "name": "PowerBI-Deneb",
+      "description": "Plantillas Deneb para Power BI: especificaciones Vega-Lite"
+    },
+    {
+      "name": "powerbi-pbip-tools",
+      "description": "Automation tools for Power BI projects in PBIP format"
+    },
+    {
+      "name": "BI_Challenges",
+      "description": "Soluciones a retos en PySpark, Python, Power Query"
+    },
+    {
+      "name": "fabric-data-agents",
+      "description": "Anatomy of a Fabric Data Agent — reference-grade guide"
+    },
+    {
+      "name": "ubl-star",
+      "description": "UBL 2.1 invoice to dimensional model"
+    },
+    {
+      "name": "SampleDataSets",
+      "description": "Sample datasets for testing and learning"
+    },
+    {
+      "name": "PowerBI-and-Fabric",
+      "description": "Resources for Power BI and Microsoft Fabric"
+    },
+    {
+      "name": "CristobalSalcedoBI",
+      "description": "Portfolio de Cristobal Salcedo en BI"
+    }
+  ]
+}
