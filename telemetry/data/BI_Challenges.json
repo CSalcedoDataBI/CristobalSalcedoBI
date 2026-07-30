@@ -1,0 +1,60 @@
+{
+  "repo": "BI_Challenges",
+  "owner": "CSalcedoDataBI",
+  "snapshots": [
+    {
+      "date": "2026-07-29",
+      "captured_at": "2026-07-30T04:25:25.941437+00:00",
+      "views_count": 0,
+      "views_uniques": 0,
+      "clones_count": 0,
+      "clones_uniques": 0,
+      "actions_runs": 0,
+      "human_clones_count": 0,
+      "human_clones_uniques": 0,
+      "top_referrers": [
+        {
+          "referrer": "linkedin.com",
+          "count": 2,
+          "uniques": 1
+        },
+        {
+          "referrer": "Google",
+          "count": 1,
+          "uniques": 1
+        },
+        {
+          "referrer": "github.com",
+          "count": 1,
+          "uniques": 1
+        }
+      ],
+      "top_paths": [
+        {
+          "path": "/CSalcedoDataBI/BI_Challenges",
+          "title": "Overview",
+          "count": 2,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/BI_Challenges/blob/main/README.md",
+          "title": "/blob/main/README.md",
+          "count": 1,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/BI_Challenges/tree/main/EXCEL_BI/406_EXCEL_CHALLENGE",
+          "title": "/tree/main/EXCEL_BI/406_EXCEL_CHALLENGE",
+          "count": 1,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/BI_Challenges/tree/main/EXCEL_BI/407_EXCEL_CHALLENGE",
+          "title": "/tree/main/EXCEL_BI/407_EXCEL_CHALLENGE",
+          "count": 1,
+          "uniques": 1
+        }
+      ]
+    }
+  ]
+}

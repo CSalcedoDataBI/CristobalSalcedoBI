@@ -1,0 +1,80 @@
+{
+  "repo": "powerbi-pbip-tools",
+  "owner": "CSalcedoDataBI",
+  "snapshots": [
+    {
+      "date": "2026-07-29",
+      "captured_at": "2026-07-30T04:25:25.070840+00:00",
+      "views_count": 0,
+      "views_uniques": 0,
+      "clones_count": 0,
+      "clones_uniques": 0,
+      "actions_runs": 0,
+      "human_clones_count": 0,
+      "human_clones_uniques": 0,
+      "top_referrers": [
+        {
+          "referrer": "github.com",
+          "count": 14,
+          "uniques": 4
+        }
+      ],
+      "top_paths": [
+        {
+          "path": "/CSalcedoDataBI/powerbi-pbip-tools",
+          "title": "Overview",
+          "count": 7,
+          "uniques": 4
+        },
+        {
+          "path": "/CSalcedoDataBI/powerbi-pbip-tools/blob/main/docs/skill-svg-recolor-powerbi-guide.md",
+          "title": "/blob/main/docs/skill-svg-recolor-powerbi-guide.md",
+          "count": 1,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/powerbi-pbip-tools/blob/main/examples/DAX-User-Defined-Functions/DAX User-Defined Functions.pbip",
+          "title": "/blob/main/examples/DAX-User-Defined-Functions/DAX User-Defined Functions.pbip",
+          "count": 1,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/powerbi-pbip-tools/blob/main/skills/skill-semantic-architect-powerbi/SKILL.md",
+          "title": "/blob/main/skills/skill-semantic-architect-powerbi/SKILL.md",
+          "count": 1,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/powerbi-pbip-tools/blob/main/skills/skill-semantic-architect-powerbi/resources/context-store-template.en.md",
+          "title": "/blob/main/skills/skill-semantic-architect-powerbi/resources/context-store-template.en.md",
+          "count": 1,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/powerbi-pbip-tools/issues/5",
+          "title": "/issues/5",
+          "count": 1,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/powerbi-pbip-tools/tree/main/examples",
+          "title": "/tree/main/examples",
+          "count": 1,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/powerbi-pbip-tools/tree/main/skills",
+          "title": "/tree/main/skills",
+          "count": 1,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/powerbi-pbip-tools/tree/main/skills/skill-semantic-architect-powerbi/resources",
+          "title": "/tree/main/skills/skill-semantic-architect-powerbi/resources",
+          "count": 1,
+          "uniques": 1
+        }
+      ]
+    }
+  ]
+}

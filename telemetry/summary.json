@@ -1,0 +1,42 @@
+{
+  "last_updated": "2026-07-30T04:25:30.696188+00:00",
+  "snapshot_date": "2026-07-29",
+  "repos": [
+    {
+      "repo": "agentic-board",
+      "status": "ok"
+    },
+    {
+      "repo": "PowerBI-Deneb",
+      "status": "ok"
+    },
+    {
+      "repo": "powerbi-pbip-tools",
+      "status": "ok"
+    },
+    {
+      "repo": "BI_Challenges",
+      "status": "ok"
+    },
+    {
+      "repo": "fabric-data-agents",
+      "status": "ok"
+    },
+    {
+      "repo": "ubl-star",
+      "status": "ok"
+    },
+    {
+      "repo": "SampleDataSets",
+      "status": "ok"
+    },
+    {
+      "repo": "PowerBI-and-Fabric",
+      "status": "ok"
+    },
+    {
+      "repo": "CristobalSalcedoBI",
+      "status": "ok"
+    }
+  ]
+}

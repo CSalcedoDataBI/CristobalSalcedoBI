@@ -1,0 +1,91 @@
+{
+  "repo": "fabric-data-agents",
+  "owner": "CSalcedoDataBI",
+  "snapshots": [
+    {
+      "date": "2026-07-29",
+      "captured_at": "2026-07-30T04:25:26.801904+00:00",
+      "views_count": 0,
+      "views_uniques": 0,
+      "clones_count": 0,
+      "clones_uniques": 0,
+      "actions_runs": 0,
+      "human_clones_count": 0,
+      "human_clones_uniques": 0,
+      "top_referrers": [
+        {
+          "referrer": "github.com",
+          "count": 48,
+          "uniques": 1
+        },
+        {
+          "referrer": "Bing",
+          "count": 5,
+          "uniques": 1
+        }
+      ],
+      "top_paths": [
+        {
+          "path": "/CSalcedoDataBI/fabric-data-agents",
+          "title": "Overview",
+          "count": 20,
+          "uniques": 3
+        },
+        {
+          "path": "/CSalcedoDataBI/fabric-data-agents/tree/main/examples/contoso-retail",
+          "title": "/tree/main/examples/contoso-retail",
+          "count": 8,
+          "uniques": 3
+        },
+        {
+          "path": "/CSalcedoDataBI/fabric-data-agents/tree/main/examples/contoso-retail/data-agent",
+          "title": "/tree/main/examples/contoso-retail/data-agent",
+          "count": 7,
+          "uniques": 3
+        },
+        {
+          "path": "/CSalcedoDataBI/fabric-data-agents/blob/main/examples/contoso-retail/data-agent/instructions.md",
+          "title": "/blob/main/examples/contoso-retail/data-agent/instructions.md",
+          "count": 6,
+          "uniques": 3
+        },
+        {
+          "path": "/CSalcedoDataBI/fabric-data-agents/blob/main/examples/contoso-retail/data-agent/prep-for-ai-reference.md",
+          "title": "/blob/main/examples/contoso-retail/data-agent/prep-for-ai-reference.md",
+          "count": 3,
+          "uniques": 3
+        },
+        {
+          "path": "/CSalcedoDataBI/fabric-data-agents/tree/main/skills",
+          "title": "/tree/main/skills",
+          "count": 3,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/fabric-data-agents/blob/main/examples/contoso-retail/data-agent/verified-answers.md",
+          "title": "/blob/main/examples/contoso-retail/data-agent/verified-answers.md",
+          "count": 2,
+          "uniques": 2
+        },
+        {
+          "path": "/CSalcedoDataBI/fabric-data-agents/projects",
+          "title": "/projects",
+          "count": 2,
+          "uniques": 2
+        },
+        {
+          "path": "/CSalcedoDataBI/fabric-data-agents/blob/main/README.md",
+          "title": "/blob/main/README.md",
+          "count": 2,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/fabric-data-agents/blob/main/docs/anatomy/04-source-instructions-and-fewshots.md",
+          "title": "/blob/main/docs/anatomy/04-source-instructions-and-fewshots.md",
+          "count": 2,
+          "uniques": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "repo": "SampleDataSets",
+  "owner": "CSalcedoDataBI",
+  "snapshots": [
+    {
+      "date": "2026-07-29",
+      "captured_at": "2026-07-30T04:25:28.731295+00:00",
+      "views_count": 0,
+      "views_uniques": 0,
+      "clones_count": 0,
+      "clones_uniques": 0,
+      "actions_runs": 1,
+      "human_clones_count": 0,
+      "human_clones_uniques": 0,
+      "top_referrers": [
+        {
+          "referrer": "github.com",
+          "count": 5,
+          "uniques": 1
+        }
+      ],
+      "top_paths": [
+        {
+          "path": "/CSalcedoDataBI/SampleDataSets",
+          "title": "Overview",
+          "count": 4,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/SampleDataSets/tree/main/contoso-retail",
+          "title": "/tree/main/contoso-retail",
+          "count": 2,
+          "uniques": 2
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "repo": "PowerBI-Deneb",
+  "owner": "CSalcedoDataBI",
+  "snapshots": [
+    {
+      "date": "2026-07-29",
+      "captured_at": "2026-07-30T04:25:24.204672+00:00",
+      "views_count": 0,
+      "views_uniques": 0,
+      "clones_count": 0,
+      "clones_uniques": 0,
+      "actions_runs": 0,
+      "human_clones_count": 0,
+      "human_clones_uniques": 0,
+      "top_referrers": [
+        {
+          "referrer": "Bing",
+          "count": 25,
+          "uniques": 6
+        },
+        {
+          "referrer": "Google",
+          "count": 22,
+          "uniques": 3
+        },
+        {
+          "referrer": "github.com",
+          "count": 15,
+          "uniques": 2
+        },
+        {
+          "referrer": "youtube.com",
+          "count": 4,
+          "uniques": 1
+        }
+      ],
+      "top_paths": [
+        {
+          "path": "/CSalcedoDataBI/PowerBI-Deneb",
+          "title": "Overview",
+          "count": 18,
+          "uniques": 11
+        },
+        {
+          "path": "/CSalcedoDataBI/PowerBI-Deneb/tree/main/Tarjetas_Dinamicas",
+          "title": "/tree/main/Tarjetas_Dinamicas",
+          "count": 5,
+          "uniques": 5
+        },
+        {
+          "path": "/CSalcedoDataBI/PowerBI-Deneb/tree/main/Tarjetas_Dinamicas/Files",
+          "title": "/tree/main/Tarjetas_Dinamicas/Files",
+          "count": 3,
+          "uniques": 3
+        },
+        {
+          "path": "/CSalcedoDataBI/PowerBI-Deneb/blob/main/Diagramas_Pareto/FIles/template.json",
+          "title": "/blob/main/Diagramas_Pareto/FIles/template.json",
+          "count": 3,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/PowerBI-Deneb/blob/main/README.md",
+          "title": "/blob/main/README.md",
+          "count": 2,
+          "uniques": 2
+        },
+        {
+          "path": "/CSalcedoDataBI/PowerBI-Deneb/blob/main/Tarjetas_Dinamicas/Files/Tarjetas_Dinamicas_Tendencia_Deneb_VegaLite.pbix",
+          "title": "/blob/main/Tarjetas_Dinamicas/Files/Tarjetas_Dinamicas_Tendencia_Deneb_VegaLite.pbix",
+          "count": 2,
+          "uniques": 2
+        },
+        {
+          "path": "/CSalcedoDataBI/PowerBI-Deneb/tree/main/Aggregate_Bar_Chart_With_Cross_Filtering",
+          "title": "/tree/main/Aggregate_Bar_Chart_With_Cross_Filtering",
+          "count": 2,
+          "uniques": 2
+        },
+        {
+          "path": "/CSalcedoDataBI/PowerBI-Deneb/blob/main/Diagramas_Pareto/FIles/Pareto_Dinamico_Deneb_VegaLite_P1.gif",
+          "title": "/blob/main/Diagramas_Pareto/FIles/Pareto_Dinamico_Deneb_VegaLite_P1.gif",
+          "count": 2,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/PowerBI-Deneb/blob/main/Grouped_Bar_Chart_(Multiple_Measure_With_Repeat)/Files/Grouped_Bar_Chart_(Multiple_Measure_With_Repeat).pbix",
+          "title": "/blob/main/Grouped_Bar_Chart_(Multiple_Measure_With_Repeat)/Files/Grouped_Bar_Chart_(Multiple_Measure_With_Repeat).pbix",
+          "count": 2,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/PowerBI-Deneb/blob/main/Tarjetas_Dinamicas/Files/Tarjetas_Dinamicas_Tendencia_Deneb_VegaLite.PNG",
+          "title": "/blob/main/Tarjetas_Dinamicas/Files/Tarjetas_Dinamicas_Tendencia_Deneb_VegaLite.PNG",
+          "count": 2,
+          "uniques": 1
+        }
+      ]
+    }
+  ]
+}
