@@ -2,7 +2,9 @@ name: Daily Telemetry Snapshot
 
 on:
   schedule:
-    # 01:30 UTC — traffic data for the previous day is available by then
+    # 01:30 UTC. The hour no longer has to be right: each run re-reads the whole
+    # 14-day window the Traffic API keeps, so a day fetched before GitHub had
+    # consolidated it is corrected by the next run instead of staying zero (#18).
     - cron: '30 1 * * *'
   workflow_dispatch:
     inputs:

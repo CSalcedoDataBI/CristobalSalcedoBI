@@ -50,12 +50,18 @@ def gh_get(path: str, token: str) -> dict | list | None:
         return None
 
 
-def count_actions_runs(owner: str, repo: str, date_str: str, token: str) -> int:
-    """Count Actions runs whose created_at falls on date_str (UTC, YYYY-MM-DD)."""
-    total = 0
+def actions_runs_by_day(
+    owner: str, repo: str, start_date: str, end_date: str, token: str
+) -> dict[str, int]:
+    """Count Actions runs per UTC day across a date range.
+
+    One paginated query for the whole window instead of one per day: the window
+    is 14 days wide and this runs for every repo, so per-day queries would be
+    14x the API calls for the same answer.
+    """
+    counts: dict[str, int] = {}
     page = 1
-    # GitHub supports `created` as a date range: YYYY-MM-DD..YYYY-MM-DD
-    date_range = f"{date_str}..{date_str}"
+    date_range = f"{start_date}..{end_date}"
     while True:
         data = gh_get(
             f"/repos/{owner}/{repo}/actions/runs"
@@ -67,21 +73,15 @@ def count_actions_runs(owner: str, repo: str, date_str: str, token: str) -> int:
         runs = data["workflow_runs"]
         if not runs:
             break
-        total += len(runs)
+        for run in runs:
+            day = (run.get("created_at") or "")[:10]
+            if day:
+                counts[day] = counts.get(day, 0) + 1
         if len(runs) < 100:
             break
         page += 1
         time.sleep(0.2)  # gentle on rate limits
-    return total
-
-
-def find_day(items: list, date_str: str, timestamp_key: str = "timestamp") -> dict:
-    """Find the item whose timestamp starts with date_str."""
-    for item in items or []:
-        ts = item.get(timestamp_key, "")
-        if ts.startswith(date_str):
-            return item
-    return {}
+    return counts
 
 
 def snapshot_repo(
@@ -95,68 +95,92 @@ def snapshot_repo(
     """Snapshot traffic for one repo and merge into its data file."""
     print(f"  {owner}/{repo} ...", end=" ", flush=True)
 
-    # Traffic endpoints
+    # Traffic endpoints. views/clones carry the whole 14-day window GitHub keeps.
     views_data = gh_get(f"/repos/{owner}/{repo}/traffic/views?per=day", token)
     clones_data = gh_get(f"/repos/{owner}/{repo}/traffic/clones?per=day", token)
     referrers = gh_get(f"/repos/{owner}/{repo}/traffic/popular/referrers", token)
     paths = gh_get(f"/repos/{owner}/{repo}/traffic/popular/paths", token)
-    actions_runs = count_actions_runs(owner, repo, date_str, token)
 
-    today_views = find_day(views_data.get("views", []) if views_data else [], date_str)
-    today_clones = find_day(clones_data.get("clones", []) if clones_data else [], date_str)
-
-    views_count = today_views.get("count", 0)
-    views_uniques = today_views.get("uniques", 0)
-    clones_count = today_clones.get("count", 0)
-    clones_uniques = today_clones.get("uniques", 0)
-
-    # CI normalization: GH Actions runners are few IPs, so uniques are mostly
-    # already human. The raw count is inflated by each individual run checkout.
-    human_clones_count = max(0, clones_count - actions_runs)
-
-    snapshot = {
-        "date": date_str,
-        "captured_at": datetime.now(timezone.utc).isoformat(),
-        "views_count": views_count,
-        "views_uniques": views_uniques,
-        "clones_count": clones_count,
-        "clones_uniques": clones_uniques,
-        "actions_runs": actions_runs,
-        "human_clones_count": human_clones_count,
-        # Unique cloners already mostly human (CI shares IPs -> few uniques)
-        "human_clones_uniques": clones_uniques,
-        "top_referrers": referrers or [],
-        "top_paths": paths or [],
+    views_by_day = {
+        d["timestamp"][:10]: d for d in (views_data or {}).get("views", [])
+    }
+    clones_by_day = {
+        d["timestamp"][:10]: d for d in (clones_data or {}).get("clones", [])
     }
 
-    print(
-        f"views={views_count}/{views_uniques} "
-        f"clones={clones_count}/{clones_uniques} "
-        f"ci_runs={actions_runs} "
-        f"human_clones={human_clones_count}"
-    )
+    # Rewrite EVERY day the API still knows about, not only date_str. A day asked
+    # for before GitHub had consolidated it comes back as zero, and the old
+    # write-once-per-date behavior froze that zero forever even though the real
+    # number landed minutes later. Re-reading the window makes late data self-heal.
+    days = sorted(set(views_by_day) | set(clones_by_day) | {date_str})
+    runs_by_day = actions_runs_by_day(owner, repo, days[0], days[-1], token)
+    newest = days[-1]
 
-    if dry_run:
-        return snapshot
-
-    # Load existing data file
-    data_dir.mkdir(parents=True, exist_ok=True)
+    # Load existing data file first: past days keep the referrer/path aggregate
+    # captured while they were current.
     data_file = data_dir / f"{repo}.json"
     if data_file.exists():
         with open(data_file, encoding="utf-8") as f:
             repo_data = json.load(f)
     else:
         repo_data = {"repo": repo, "owner": owner, "snapshots": []}
+    stored = {s["date"]: s for s in repo_data.get("snapshots", [])}
 
-    # Upsert by date (idempotent re-runs)
-    existing = {s["date"]: i for i, s in enumerate(repo_data["snapshots"])}
-    if date_str in existing:
-        repo_data["snapshots"][existing[date_str]] = snapshot
-    else:
-        repo_data["snapshots"].append(snapshot)
+    captured_at = datetime.now(timezone.utc).isoformat()
+    rebuilt = []
+    for day in days:
+        v = views_by_day.get(day, {})
+        c = clones_by_day.get(day, {})
+        clones_count = c.get("count", 0)
+        actions_runs = runs_by_day.get(day, 0)
+        prev = stored.get(day, {})
 
-    repo_data["snapshots"].sort(key=lambda s: s["date"])
+        # referrers/paths are a rolling 14-day aggregate, not a daily measure:
+        # copying them onto every day would let a consumer count the same visit
+        # fourteen times. Only the newest day carries the current aggregate.
+        if day == newest:
+            day_referrers, day_paths = referrers or [], paths or []
+        else:
+            day_referrers = prev.get("top_referrers", [])
+            day_paths = prev.get("top_paths", [])
 
+        rebuilt.append({
+            "date": day,
+            "captured_at": captured_at,
+            "views_count": v.get("count", 0),
+            "views_uniques": v.get("uniques", 0),
+            "clones_count": clones_count,
+            "clones_uniques": c.get("uniques", 0),
+            "actions_runs": actions_runs,
+            # CI normalization: GH Actions runners are few IPs, so uniques are
+            # mostly already human. The raw count is inflated by each checkout.
+            "human_clones_count": max(0, clones_count - actions_runs),
+            # Unique cloners already mostly human (CI shares IPs -> few uniques)
+            "human_clones_uniques": c.get("uniques", 0),
+            "top_referrers": day_referrers,
+            "top_paths": day_paths,
+        })
+
+    # date_str is always in `days`, so the requested day is always present here.
+    by_date = {s["date"]: s for s in rebuilt}
+    snapshot = by_date[date_str]
+
+    print(
+        f"views={snapshot['views_count']}/{snapshot['views_uniques']} "
+        f"clones={snapshot['clones_count']}/{snapshot['clones_uniques']} "
+        f"ci_runs={snapshot['actions_runs']} "
+        f"human_clones={snapshot['human_clones_count']} "
+        f"({len(rebuilt)} day(s) refreshed)"
+    )
+
+    if dry_run:
+        return snapshot
+
+    # Days older than the API window survive untouched; the refreshed ones win.
+    stored.update(by_date)
+    repo_data["snapshots"] = sorted(stored.values(), key=lambda s: s["date"])
+
+    data_dir.mkdir(parents=True, exist_ok=True)
     with open(data_file, "w", encoding="utf-8") as f:
         json.dump(repo_data, f, indent=2, ensure_ascii=False)
 
