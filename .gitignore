@@ -1,0 +1,17 @@
+# agentic-board local session state: expert contracts and briefs, role catalog,
+# live session registry, handoffs. Machine-local and often session-specific, and
+# this is a public repo - none of it should ever be pushed.
+.agentic-board/
+HANDOFF.md
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
