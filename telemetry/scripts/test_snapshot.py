@@ -60,8 +60,8 @@ class TestNormalization(unittest.TestCase):
         )
         with tempfile.TemporaryDirectory() as tmpdir, \
              patch.object(snapshot, "gh_get") as mock_get, \
-             patch.object(snapshot, "count_actions_runs") as mock_runs:
-            mock_runs.return_value = 80
+             patch.object(snapshot, "actions_runs_by_day") as mock_runs:
+            mock_runs.return_value = {"2026-07-28": 80}
             mock_get.side_effect = [views_resp, clones_resp, referrers, paths]
             result = snapshot.snapshot_repo(
                 "CSalcedoDataBI", "test-repo", "2026-07-28",
@@ -75,8 +75,8 @@ class TestNormalization(unittest.TestCase):
         """When CI runs exceed total clones, human count is 0, not negative."""
         with tempfile.TemporaryDirectory() as tmpdir, \
              patch.object(snapshot, "gh_get") as mock_get, \
-             patch.object(snapshot, "count_actions_runs") as mock_runs:
-            mock_runs.return_value = 200
+             patch.object(snapshot, "actions_runs_by_day") as mock_runs:
+            mock_runs.return_value = {"2026-07-28": 200}
             mock_get.side_effect = [
                 {"views": [{"timestamp": "2026-07-28T00:00:00Z", "count": 5, "uniques": 2}]},
                 {"clones": [{"timestamp": "2026-07-28T00:00:00Z", "count": 50, "uniques": 3}]},
@@ -93,8 +93,8 @@ class TestNormalization(unittest.TestCase):
         """On a day with 0 CI runs, all clones are counted as human."""
         with tempfile.TemporaryDirectory() as tmpdir, \
              patch.object(snapshot, "gh_get") as mock_get, \
-             patch.object(snapshot, "count_actions_runs") as mock_runs:
-            mock_runs.return_value = 0
+             patch.object(snapshot, "actions_runs_by_day") as mock_runs:
+            mock_runs.return_value = {"2026-07-26": 0}
             mock_get.side_effect = [
                 {"views": [{"timestamp": "2026-07-26T00:00:00Z", "count": 10, "uniques": 6}]},
                 {"clones": [{"timestamp": "2026-07-26T00:00:00Z", "count": 16, "uniques": 14}]},
@@ -114,8 +114,8 @@ class TestUpsert(unittest.TestCase):
 
     def _run_snapshot(self, tmpdir, date_str, clones_count, ci_runs):
         with patch.object(snapshot, "gh_get") as mock_get, \
-             patch.object(snapshot, "count_actions_runs") as mock_runs:
-            mock_runs.return_value = ci_runs
+             patch.object(snapshot, "actions_runs_by_day") as mock_runs:
+            mock_runs.return_value = {date_str: ci_runs}
             mock_get.side_effect = [
                 {"views": [{"timestamp": f"{date_str}T00:00:00Z", "count": 10, "uniques": 5}]},
                 {"clones": [{
@@ -171,24 +171,122 @@ class TestUpsert(unittest.TestCase):
         self.assertEqual(dates, sorted(dates))
 
 
-class TestCountActionsRunsPagination(unittest.TestCase):
-    """count_actions_runs must paginate when there are >100 runs."""
+class TestActionsRunsByDay(unittest.TestCase):
+    """Runs are fetched once for the whole window and bucketed per UTC day."""
+
+    def _run(day, n):  # noqa: N805 - helper, not a test method
+        return [{"created_at": f"{day}T0{i}:00:00Z"} for i in range(n)]
+
+    def test_buckets_runs_by_day(self):
+        page1 = {"workflow_runs": TestActionsRunsByDay._run("2026-07-27", 3)
+                 + TestActionsRunsByDay._run("2026-07-28", 2)}
+        with patch.object(snapshot, "gh_get", side_effect=[page1]), patch("time.sleep"):
+            counts = snapshot.actions_runs_by_day("o", "r", "2026-07-27", "2026-07-28", "tok")
+        self.assertEqual(counts, {"2026-07-27": 3, "2026-07-28": 2})
 
     def test_paginates_correctly(self):
-        page1 = {"workflow_runs": [{}] * 100}
-        page2 = {"workflow_runs": [{}] * 40}
+        page1 = {"workflow_runs": TestActionsRunsByDay._run("2026-07-28", 100)}
+        page2 = {"workflow_runs": TestActionsRunsByDay._run("2026-07-28", 40)}
         page3 = {"workflow_runs": []}
-
         with patch.object(snapshot, "gh_get", side_effect=[page1, page2, page3]), \
              patch("time.sleep"):
-            count = snapshot.count_actions_runs("o", "r", "2026-07-28", "tok")
+            counts = snapshot.actions_runs_by_day("o", "r", "2026-07-28", "2026-07-28", "tok")
+        self.assertEqual(counts["2026-07-28"], 140)
 
-        self.assertEqual(count, 140)
-
-    def test_returns_zero_on_api_error(self):
+    def test_returns_empty_on_api_error(self):
         with patch.object(snapshot, "gh_get", return_value=None):
-            count = snapshot.count_actions_runs("o", "r", "2026-07-28", "tok")
-        self.assertEqual(count, 0)
+            counts = snapshot.actions_runs_by_day("o", "r", "2026-07-28", "2026-07-28", "tok")
+        self.assertEqual(counts, {})
+
+
+class TestBackfill(unittest.TestCase):
+    """The Traffic API keeps 14 days; every day it returns must be (re)written.
+
+    The bug this guards: a day captured before GitHub had consolidated it was
+    stored as 0/0 and never revisited, so the zero outlived the real data.
+    """
+
+    def _api(self, days: dict):
+        """days = {date: (views, clones)}"""
+        return (
+            {"views": [{"timestamp": f"{d}T00:00:00Z", "count": v, "uniques": 1}
+                       for d, (v, _) in days.items()]},
+            {"clones": [{"timestamp": f"{d}T00:00:00Z", "count": c, "uniques": 1}
+                        for d, (_, c) in days.items()]},
+            [{"referrer": "Google", "count": 9, "uniques": 4}],
+            [{"path": "/x", "title": "x", "count": 3, "uniques": 2}],
+        )
+
+    def _run(self, tmpdir, requested, days, runs=None):
+        views, clones, refs, paths = self._api(days)
+        with patch.object(snapshot, "gh_get") as mock_get, \
+             patch.object(snapshot, "actions_runs_by_day") as mock_runs:
+            mock_runs.return_value = runs or {}
+            mock_get.side_effect = [views, clones, refs, paths]
+            snapshot.snapshot_repo("CSalcedoDataBI", "repo-a", requested,
+                                   "fake-token", Path(tmpdir))
+        with open(Path(tmpdir) / "repo-a.json", encoding="utf-8") as f:
+            return json.load(f)
+
+    def test_writes_every_day_the_api_returns_not_just_the_requested_one(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            data = self._run(tmp, "2026-07-29", {
+                "2026-07-27": (5, 1), "2026-07-28": (7, 2), "2026-07-29": (29, 3),
+            })
+        by_date = {s["date"]: s for s in data["snapshots"]}
+        self.assertEqual(sorted(by_date), ["2026-07-27", "2026-07-28", "2026-07-29"])
+        self.assertEqual(by_date["2026-07-27"]["views_count"], 5)
+        self.assertEqual(by_date["2026-07-29"]["views_count"], 29)
+
+    def test_a_stored_zero_is_repaired_when_the_data_arrives_late(self):
+        """The regression test for #18."""
+        with tempfile.TemporaryDirectory() as tmp:
+            # First run: GitHub has not consolidated the day yet.
+            first = self._run(tmp, "2026-07-29", {"2026-07-29": (0, 0)})
+            self.assertEqual(first["snapshots"][0]["views_count"], 0)
+
+            # Next run, a day later: the API now reports the real numbers.
+            second = self._run(tmp, "2026-07-30", {
+                "2026-07-29": (29, 5), "2026-07-30": (4, 1),
+            })
+
+        by_date = {s["date"]: s for s in second["snapshots"]}
+        self.assertEqual(by_date["2026-07-29"]["views_count"], 29,
+                         "the frozen zero must be overwritten by the real value")
+        self.assertEqual(by_date["2026-07-30"]["views_count"], 4)
+
+    def test_referrers_are_attached_only_to_the_newest_day(self):
+        """They are a rolling 14-day aggregate, not a per-day measure.
+
+        Copying them onto every day would let a consumer sum the same visits
+        fourteen times.
+        """
+        with tempfile.TemporaryDirectory() as tmp:
+            data = self._run(tmp, "2026-07-29", {
+                "2026-07-28": (7, 2), "2026-07-29": (29, 3),
+            })
+        by_date = {s["date"]: s for s in data["snapshots"]}
+        self.assertEqual(by_date["2026-07-28"]["top_referrers"], [])
+        self.assertEqual(len(by_date["2026-07-29"]["top_referrers"]), 1)
+
+    def test_older_referrers_already_stored_are_preserved(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            self._run(tmp, "2026-07-28", {"2026-07-28": (7, 2)})
+            data = self._run(tmp, "2026-07-29", {
+                "2026-07-28": (7, 2), "2026-07-29": (29, 3),
+            })
+        by_date = {s["date"]: s for s in data["snapshots"]}
+        self.assertEqual(len(by_date["2026-07-28"]["top_referrers"]), 1,
+                         "a past day keeps the aggregate captured when it was current")
+
+    def test_ci_normalization_uses_that_days_runs(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            data = self._run(tmp, "2026-07-29",
+                             {"2026-07-28": (7, 30), "2026-07-29": (29, 12)},
+                             runs={"2026-07-28": 25, "2026-07-29": 2})
+        by_date = {s["date"]: s for s in data["snapshots"]}
+        self.assertEqual(by_date["2026-07-28"]["human_clones_count"], 5)
+        self.assertEqual(by_date["2026-07-29"]["human_clones_count"], 10)
 
 
 class TestMainCLI(unittest.TestCase):
