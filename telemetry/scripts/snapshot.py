@@ -84,15 +84,6 @@ def actions_runs_by_day(
     return counts
 
 
-def find_day(items: list, date_str: str, timestamp_key: str = "timestamp") -> dict:
-    """Find the item whose timestamp starts with date_str."""
-    for item in items or []:
-        ts = item.get(timestamp_key, "")
-        if ts.startswith(date_str):
-            return item
-    return {}
-
-
 def snapshot_repo(
     owner: str,
     repo: str,
@@ -170,8 +161,9 @@ def snapshot_repo(
             "top_paths": day_paths,
         })
 
+    # date_str is always in `days`, so the requested day is always present here.
     by_date = {s["date"]: s for s in rebuilt}
-    snapshot = by_date.get(date_str, by_date[newest])
+    snapshot = by_date[date_str]
 
     print(
         f"views={snapshot['views_count']}/{snapshot['views_uniques']} "

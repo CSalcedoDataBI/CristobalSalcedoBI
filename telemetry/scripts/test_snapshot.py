@@ -12,27 +12,36 @@ sys.path.insert(0, str(Path(__file__).parent))  # noqa: E402
 import snapshot  # noqa: E402
 
 
-class TestFindDay(unittest.TestCase):
-    def test_finds_matching_timestamp(self):
-        items = [
-            {"timestamp": "2026-07-27T00:00:00Z", "count": 10, "uniques": 3},
-            {"timestamp": "2026-07-28T00:00:00Z", "count": 25, "uniques": 8},
-        ]
-        result = snapshot.find_day(items, "2026-07-28")
-        self.assertEqual(result["count"], 25)
+class TestMissingDays(unittest.TestCase):
+    """A day absent from the API response must record zero, not crash."""
 
-    def test_returns_empty_dict_when_not_found(self):
-        items = [{"timestamp": "2026-07-27T00:00:00Z", "count": 5, "uniques": 1}]
-        result = snapshot.find_day(items, "2026-07-28")
-        self.assertEqual(result, {})
+    def test_day_missing_from_the_api_is_written_as_zero(self):
+        with tempfile.TemporaryDirectory() as tmp, \
+             patch.object(snapshot, "gh_get") as mock_get, \
+             patch.object(snapshot, "actions_runs_by_day", return_value={}):
+            mock_get.side_effect = [
+                {"views": [{"timestamp": "2026-07-27T00:00:00Z", "count": 4, "uniques": 2}]},
+                {"clones": []},
+                [],
+                [],
+            ]
+            result = snapshot.snapshot_repo(
+                "CSalcedoDataBI", "repo-a", "2026-07-28",
+                "fake-token", Path(tmp), dry_run=True
+            )
+        self.assertEqual(result["date"], "2026-07-28")
+        self.assertEqual(result["views_count"], 0)
 
-    def test_handles_none_items(self):
-        result = snapshot.find_day(None, "2026-07-28")
-        self.assertEqual(result, {})
-
-    def test_handles_empty_list(self):
-        result = snapshot.find_day([], "2026-07-28")
-        self.assertEqual(result, {})
+    def test_survives_an_api_error_on_both_traffic_endpoints(self):
+        with tempfile.TemporaryDirectory() as tmp, \
+             patch.object(snapshot, "gh_get", return_value=None), \
+             patch.object(snapshot, "actions_runs_by_day", return_value={}):
+            result = snapshot.snapshot_repo(
+                "CSalcedoDataBI", "repo-a", "2026-07-28",
+                "fake-token", Path(tmp), dry_run=True
+            )
+        self.assertEqual(result["views_count"], 0)
+        self.assertEqual(result["clones_count"], 0)
 
 
 class TestNormalization(unittest.TestCase):
