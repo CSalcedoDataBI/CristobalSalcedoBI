@@ -4,7 +4,7 @@
   "snapshots": [
     {
       "date": "2026-07-16",
-      "captured_at": "2026-07-30T19:25:02.523333+00:00",
+      "captured_at": "2026-07-31T04:51:15.551052+00:00",
       "views_count": 15,
       "views_uniques": 3,
       "clones_count": 39,
@@ -17,7 +17,7 @@
     },
     {
       "date": "2026-07-17",
-      "captured_at": "2026-07-30T19:25:02.523333+00:00",
+      "captured_at": "2026-07-31T04:51:15.551052+00:00",
       "views_count": 1,
       "views_uniques": 1,
       "clones_count": 396,
@@ -30,7 +30,7 @@
     },
     {
       "date": "2026-07-18",
-      "captured_at": "2026-07-30T19:25:02.523333+00:00",
+      "captured_at": "2026-07-31T04:51:15.551052+00:00",
       "views_count": 1,
       "views_uniques": 1,
       "clones_count": 100,
@@ -43,7 +43,7 @@
     },
     {
       "date": "2026-07-19",
-      "captured_at": "2026-07-30T19:25:02.523333+00:00",
+      "captured_at": "2026-07-31T04:51:15.551052+00:00",
       "views_count": 1,
       "views_uniques": 1,
       "clones_count": 3,
@@ -56,7 +56,7 @@
     },
     {
       "date": "2026-07-20",
-      "captured_at": "2026-07-30T19:25:02.523333+00:00",
+      "captured_at": "2026-07-31T04:51:15.551052+00:00",
       "views_count": 2,
       "views_uniques": 2,
       "clones_count": 216,
@@ -69,7 +69,7 @@
     },
     {
       "date": "2026-07-21",
-      "captured_at": "2026-07-30T19:25:02.523333+00:00",
+      "captured_at": "2026-07-31T04:51:15.551052+00:00",
       "views_count": 13,
       "views_uniques": 3,
       "clones_count": 44,
@@ -82,7 +82,7 @@
     },
     {
       "date": "2026-07-22",
-      "captured_at": "2026-07-30T19:25:02.523333+00:00",
+      "captured_at": "2026-07-31T04:51:15.551052+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 155,
@@ -95,7 +95,7 @@
     },
     {
       "date": "2026-07-23",
-      "captured_at": "2026-07-30T19:25:02.523333+00:00",
+      "captured_at": "2026-07-31T04:51:15.551052+00:00",
       "views_count": 19,
       "views_uniques": 3,
       "clones_count": 220,
@@ -108,7 +108,7 @@
     },
     {
       "date": "2026-07-24",
-      "captured_at": "2026-07-30T19:25:02.523333+00:00",
+      "captured_at": "2026-07-31T04:51:15.551052+00:00",
       "views_count": 12,
       "views_uniques": 1,
       "clones_count": 94,
@@ -121,7 +121,7 @@
     },
     {
       "date": "2026-07-25",
-      "captured_at": "2026-07-30T19:25:02.523333+00:00",
+      "captured_at": "2026-07-31T04:51:15.551052+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 26,
@@ -134,7 +134,7 @@
     },
     {
       "date": "2026-07-26",
-      "captured_at": "2026-07-30T19:25:02.523333+00:00",
+      "captured_at": "2026-07-31T04:51:15.551052+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 14,
@@ -147,7 +147,7 @@
     },
     {
       "date": "2026-07-27",
-      "captured_at": "2026-07-30T19:25:02.523333+00:00",
+      "captured_at": "2026-07-31T04:51:15.551052+00:00",
       "views_count": 2,
       "views_uniques": 1,
       "clones_count": 204,
@@ -160,7 +160,7 @@
     },
     {
       "date": "2026-07-28",
-      "captured_at": "2026-07-30T19:25:02.523333+00:00",
+      "captured_at": "2026-07-31T04:51:15.551052+00:00",
       "views_count": 7,
       "views_uniques": 1,
       "clones_count": 334,
@@ -173,7 +173,7 @@
     },
     {
       "date": "2026-07-29",
-      "captured_at": "2026-07-30T19:25:02.523333+00:00",
+      "captured_at": "2026-07-31T04:51:15.551052+00:00",
       "views_count": 3,
       "views_uniques": 1,
       "clones_count": 131,
@@ -181,6 +181,91 @@
       "actions_runs": 56,
       "human_clones_count": 75,
       "human_clones_uniques": 36,
+      "top_referrers": [
+        {
+          "referrer": "github.com",
+          "count": 36,
+          "uniques": 3
+        },
+        {
+          "referrer": "teams.public.onecdn.static.microsoft",
+          "count": 2,
+          "uniques": 1
+        }
+      ],
+      "top_paths": [
+        {
+          "path": "/CSalcedoDataBI/agentic-board",
+          "title": "Overview",
+          "count": 20,
+          "uniques": 5
+        },
+        {
+          "path": "/CSalcedoDataBI/agentic-board/wiki",
+          "title": "/wiki",
+          "count": 9,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/agentic-board/pulls",
+          "title": "/pulls",
+          "count": 5,
+          "uniques": 2
+        },
+        {
+          "path": "/CSalcedoDataBI/agentic-board/projects",
+          "title": "/projects",
+          "count": 4,
+          "uniques": 2
+        },
+        {
+          "path": "/CSalcedoDataBI/agentic-board/issues",
+          "title": "/issues",
+          "count": 2,
+          "uniques": 2
+        },
+        {
+          "path": "/CSalcedoDataBI/agentic-board/tree/main",
+          "title": "/tree/main",
+          "count": 2,
+          "uniques": 2
+        },
+        {
+          "path": "/CSalcedoDataBI/agentic-board/blob/main/knowledge/KNOWLEDGE.md",
+          "title": "/blob/main/knowledge/KNOWLEDGE.md",
+          "count": 2,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/agentic-board/forks",
+          "title": "/forks",
+          "count": 2,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/agentic-board/tree/main/knowledge",
+          "title": "/tree/main/knowledge",
+          "count": 2,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/agentic-board/wiki/Knowledge-Diagrams",
+          "title": "/wiki/Knowledge-Diagrams",
+          "count": 2,
+          "uniques": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-07-30",
+      "captured_at": "2026-07-31T04:51:15.551052+00:00",
+      "views_count": 0,
+      "views_uniques": 0,
+      "clones_count": 0,
+      "clones_uniques": 0,
+      "actions_runs": 84,
+      "human_clones_count": 0,
+      "human_clones_uniques": 0,
       "top_referrers": [
         {
           "referrer": "github.com",
