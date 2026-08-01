@@ -17,7 +17,7 @@
     },
     {
       "date": "2026-07-17",
-      "captured_at": "2026-07-31T04:51:19.587285+00:00",
+      "captured_at": "2026-08-01T04:45:12.485496+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -30,7 +30,7 @@
     },
     {
       "date": "2026-07-18",
-      "captured_at": "2026-07-31T04:51:19.587285+00:00",
+      "captured_at": "2026-08-01T04:45:12.485496+00:00",
       "views_count": 1,
       "views_uniques": 1,
       "clones_count": 5,
@@ -43,7 +43,7 @@
     },
     {
       "date": "2026-07-19",
-      "captured_at": "2026-07-31T04:51:19.587285+00:00",
+      "captured_at": "2026-08-01T04:45:12.485496+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -56,7 +56,7 @@
     },
     {
       "date": "2026-07-20",
-      "captured_at": "2026-07-31T04:51:19.587285+00:00",
+      "captured_at": "2026-08-01T04:45:12.485496+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -69,7 +69,7 @@
     },
     {
       "date": "2026-07-21",
-      "captured_at": "2026-07-31T04:51:19.587285+00:00",
+      "captured_at": "2026-08-01T04:45:12.485496+00:00",
       "views_count": 2,
       "views_uniques": 1,
       "clones_count": 3,
@@ -82,7 +82,7 @@
     },
     {
       "date": "2026-07-22",
-      "captured_at": "2026-07-31T04:51:19.587285+00:00",
+      "captured_at": "2026-08-01T04:45:12.485496+00:00",
       "views_count": 3,
       "views_uniques": 1,
       "clones_count": 10,
@@ -95,7 +95,7 @@
     },
     {
       "date": "2026-07-23",
-      "captured_at": "2026-07-31T04:51:19.587285+00:00",
+      "captured_at": "2026-08-01T04:45:12.485496+00:00",
       "views_count": 7,
       "views_uniques": 1,
       "clones_count": 0,
@@ -108,7 +108,7 @@
     },
     {
       "date": "2026-07-24",
-      "captured_at": "2026-07-31T04:51:19.587285+00:00",
+      "captured_at": "2026-08-01T04:45:12.485496+00:00",
       "views_count": 39,
       "views_uniques": 2,
       "clones_count": 8,
@@ -121,7 +121,7 @@
     },
     {
       "date": "2026-07-25",
-      "captured_at": "2026-07-31T04:51:19.587285+00:00",
+      "captured_at": "2026-08-01T04:45:12.485496+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -134,7 +134,7 @@
     },
     {
       "date": "2026-07-26",
-      "captured_at": "2026-07-31T04:51:19.587285+00:00",
+      "captured_at": "2026-08-01T04:45:12.485496+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 8,
@@ -147,7 +147,7 @@
     },
     {
       "date": "2026-07-27",
-      "captured_at": "2026-07-31T04:51:19.587285+00:00",
+      "captured_at": "2026-08-01T04:45:12.485496+00:00",
       "views_count": 27,
       "views_uniques": 2,
       "clones_count": 28,
@@ -160,7 +160,7 @@
     },
     {
       "date": "2026-07-28",
-      "captured_at": "2026-07-31T04:51:19.587285+00:00",
+      "captured_at": "2026-08-01T04:45:12.485496+00:00",
       "views_count": 17,
       "views_uniques": 2,
       "clones_count": 14,
@@ -173,7 +173,7 @@
     },
     {
       "date": "2026-07-29",
-      "captured_at": "2026-07-31T04:51:19.587285+00:00",
+      "captured_at": "2026-08-01T04:45:12.485496+00:00",
       "views_count": 28,
       "views_uniques": 1,
       "clones_count": 1,
@@ -258,14 +258,14 @@
     },
     {
       "date": "2026-07-30",
-      "captured_at": "2026-07-31T04:51:19.587285+00:00",
-      "views_count": 0,
-      "views_uniques": 0,
-      "clones_count": 0,
-      "clones_uniques": 0,
+      "captured_at": "2026-08-01T04:45:12.485496+00:00",
+      "views_count": 2,
+      "views_uniques": 1,
+      "clones_count": 4,
+      "clones_uniques": 3,
       "actions_runs": 0,
-      "human_clones_count": 0,
-      "human_clones_uniques": 0,
+      "human_clones_count": 4,
+      "human_clones_uniques": 3,
       "top_referrers": [
         {
           "referrer": "github.com",
@@ -283,6 +283,91 @@
           "path": "/CSalcedoDataBI/fabric-data-agents",
           "title": "Overview",
           "count": 20,
+          "uniques": 3
+        },
+        {
+          "path": "/CSalcedoDataBI/fabric-data-agents/tree/main/examples/contoso-retail",
+          "title": "/tree/main/examples/contoso-retail",
+          "count": 10,
+          "uniques": 4
+        },
+        {
+          "path": "/CSalcedoDataBI/fabric-data-agents/blob/main/examples/contoso-retail/data-agent/instructions.md",
+          "title": "/blob/main/examples/contoso-retail/data-agent/instructions.md",
+          "count": 8,
+          "uniques": 4
+        },
+        {
+          "path": "/CSalcedoDataBI/fabric-data-agents/tree/main/examples/contoso-retail/data-agent",
+          "title": "/tree/main/examples/contoso-retail/data-agent",
+          "count": 7,
+          "uniques": 3
+        },
+        {
+          "path": "/CSalcedoDataBI/fabric-data-agents/tree/main/examples",
+          "title": "/tree/main/examples",
+          "count": 4,
+          "uniques": 2
+        },
+        {
+          "path": "/CSalcedoDataBI/fabric-data-agents/blob/main/examples/contoso-retail/data-agent/prep-for-ai-reference.md",
+          "title": "/blob/main/examples/contoso-retail/data-agent/prep-for-ai-reference.md",
+          "count": 3,
+          "uniques": 3
+        },
+        {
+          "path": "/CSalcedoDataBI/fabric-data-agents/blob/main/docs/anatomy/04-source-instructions-and-fewshots.md",
+          "title": "/blob/main/docs/anatomy/04-source-instructions-and-fewshots.md",
+          "count": 3,
+          "uniques": 2
+        },
+        {
+          "path": "/CSalcedoDataBI/fabric-data-agents/tree/main",
+          "title": "/tree/main",
+          "count": 3,
+          "uniques": 2
+        },
+        {
+          "path": "/CSalcedoDataBI/fabric-data-agents/tree/main/docs/anatomy",
+          "title": "/tree/main/docs/anatomy",
+          "count": 3,
+          "uniques": 2
+        },
+        {
+          "path": "/CSalcedoDataBI/fabric-data-agents/tree/main/examples/contoso-retail/config",
+          "title": "/tree/main/examples/contoso-retail/config",
+          "count": 3,
+          "uniques": 2
+        }
+      ]
+    },
+    {
+      "date": "2026-07-31",
+      "captured_at": "2026-08-01T04:45:12.485496+00:00",
+      "views_count": 0,
+      "views_uniques": 0,
+      "clones_count": 0,
+      "clones_uniques": 0,
+      "actions_runs": 0,
+      "human_clones_count": 0,
+      "human_clones_uniques": 0,
+      "top_referrers": [
+        {
+          "referrer": "github.com",
+          "count": 50,
+          "uniques": 1
+        },
+        {
+          "referrer": "Bing",
+          "count": 5,
+          "uniques": 1
+        }
+      ],
+      "top_paths": [
+        {
+          "path": "/CSalcedoDataBI/fabric-data-agents",
+          "title": "Overview",
+          "count": 21,
           "uniques": 3
         },
         {
