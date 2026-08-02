@@ -30,7 +30,7 @@
     },
     {
       "date": "2026-07-18",
-      "captured_at": "2026-08-01T04:45:06.667310+00:00",
+      "captured_at": "2026-08-02T04:46:25.512138+00:00",
       "views_count": 3,
       "views_uniques": 1,
       "clones_count": 0,
@@ -43,7 +43,7 @@
     },
     {
       "date": "2026-07-19",
-      "captured_at": "2026-08-01T04:45:06.667310+00:00",
+      "captured_at": "2026-08-02T04:46:25.512138+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -56,7 +56,7 @@
     },
     {
       "date": "2026-07-20",
-      "captured_at": "2026-08-01T04:45:06.667310+00:00",
+      "captured_at": "2026-08-02T04:46:25.512138+00:00",
       "views_count": 7,
       "views_uniques": 1,
       "clones_count": 0,
@@ -69,7 +69,7 @@
     },
     {
       "date": "2026-07-21",
-      "captured_at": "2026-08-01T04:45:06.667310+00:00",
+      "captured_at": "2026-08-02T04:46:25.512138+00:00",
       "views_count": 20,
       "views_uniques": 3,
       "clones_count": 0,
@@ -82,7 +82,7 @@
     },
     {
       "date": "2026-07-22",
-      "captured_at": "2026-08-01T04:45:06.667310+00:00",
+      "captured_at": "2026-08-02T04:46:25.512138+00:00",
       "views_count": 28,
       "views_uniques": 4,
       "clones_count": 0,
@@ -95,7 +95,7 @@
     },
     {
       "date": "2026-07-23",
-      "captured_at": "2026-08-01T04:45:06.667310+00:00",
+      "captured_at": "2026-08-02T04:46:25.512138+00:00",
       "views_count": 6,
       "views_uniques": 2,
       "clones_count": 2,
@@ -108,7 +108,7 @@
     },
     {
       "date": "2026-07-24",
-      "captured_at": "2026-08-01T04:45:06.667310+00:00",
+      "captured_at": "2026-08-02T04:46:25.512138+00:00",
       "views_count": 4,
       "views_uniques": 3,
       "clones_count": 1,
@@ -121,7 +121,7 @@
     },
     {
       "date": "2026-07-25",
-      "captured_at": "2026-08-01T04:45:06.667310+00:00",
+      "captured_at": "2026-08-02T04:46:25.512138+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 2,
@@ -134,7 +134,7 @@
     },
     {
       "date": "2026-07-26",
-      "captured_at": "2026-08-01T04:45:06.667310+00:00",
+      "captured_at": "2026-08-02T04:46:25.512138+00:00",
       "views_count": 2,
       "views_uniques": 1,
       "clones_count": 1,
@@ -147,7 +147,7 @@
     },
     {
       "date": "2026-07-27",
-      "captured_at": "2026-08-01T04:45:06.667310+00:00",
+      "captured_at": "2026-08-02T04:46:25.512138+00:00",
       "views_count": 5,
       "views_uniques": 2,
       "clones_count": 0,
@@ -160,7 +160,7 @@
     },
     {
       "date": "2026-07-28",
-      "captured_at": "2026-08-01T04:45:06.667310+00:00",
+      "captured_at": "2026-08-02T04:46:25.512138+00:00",
       "views_count": 3,
       "views_uniques": 2,
       "clones_count": 11,
@@ -173,7 +173,7 @@
     },
     {
       "date": "2026-07-29",
-      "captured_at": "2026-08-01T04:45:06.667310+00:00",
+      "captured_at": "2026-08-02T04:46:25.512138+00:00",
       "views_count": 29,
       "views_uniques": 5,
       "clones_count": 13,
@@ -268,7 +268,7 @@
     },
     {
       "date": "2026-07-30",
-      "captured_at": "2026-08-01T04:45:06.667310+00:00",
+      "captured_at": "2026-08-02T04:46:25.512138+00:00",
       "views_count": 9,
       "views_uniques": 4,
       "clones_count": 1,
@@ -363,14 +363,14 @@
     },
     {
       "date": "2026-07-31",
-      "captured_at": "2026-08-01T04:45:06.667310+00:00",
-      "views_count": 0,
-      "views_uniques": 0,
-      "clones_count": 0,
-      "clones_uniques": 0,
+      "captured_at": "2026-08-02T04:46:25.512138+00:00",
+      "views_count": 43,
+      "views_uniques": 4,
+      "clones_count": 2,
+      "clones_uniques": 2,
       "actions_runs": 0,
-      "human_clones_count": 0,
-      "human_clones_uniques": 0,
+      "human_clones_count": 2,
+      "human_clones_uniques": 2,
       "top_referrers": [
         {
           "referrer": "Bing",
@@ -452,6 +452,101 @@
           "path": "/CSalcedoDataBI/PowerBI-Deneb/blob/main/Layered_Bar_Chart/Files/Layered_Bar_Chart.pbix",
           "title": "/blob/main/Layered_Bar_Chart/Files/Layered_Bar_Chart.pbix",
           "count": 2,
+          "uniques": 2
+        }
+      ]
+    },
+    {
+      "date": "2026-08-01",
+      "captured_at": "2026-08-02T04:46:25.512138+00:00",
+      "views_count": 0,
+      "views_uniques": 0,
+      "clones_count": 0,
+      "clones_uniques": 0,
+      "actions_runs": 0,
+      "human_clones_count": 0,
+      "human_clones_uniques": 0,
+      "top_referrers": [
+        {
+          "referrer": "Google",
+          "count": 59,
+          "uniques": 6
+        },
+        {
+          "referrer": "Bing",
+          "count": 53,
+          "uniques": 9
+        },
+        {
+          "referrer": "github.com",
+          "count": 22,
+          "uniques": 3
+        },
+        {
+          "referrer": "youtube.com",
+          "count": 4,
+          "uniques": 1
+        }
+      ],
+      "top_paths": [
+        {
+          "path": "/CSalcedoDataBI/PowerBI-Deneb",
+          "title": "Overview",
+          "count": 31,
+          "uniques": 18
+        },
+        {
+          "path": "/CSalcedoDataBI/PowerBI-Deneb/tree/main/Tarjetas_Dinamicas",
+          "title": "/tree/main/Tarjetas_Dinamicas",
+          "count": 5,
+          "uniques": 5
+        },
+        {
+          "path": "/CSalcedoDataBI/PowerBI-Deneb/tree/main/Diagramas_Pareto",
+          "title": "/tree/main/Diagramas_Pareto",
+          "count": 4,
+          "uniques": 2
+        },
+        {
+          "path": "/CSalcedoDataBI/PowerBI-Deneb/blob/main/Gantt_Chart/Gantt_Chart.json",
+          "title": "/blob/main/Gantt_Chart/Gantt_Chart.json",
+          "count": 4,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/PowerBI-Deneb/blob/main/Dispersión_Regresión/Files/ScatterPlot_Regression_Selected.png",
+          "title": "/blob/main/Dispersión_Regresión/Files/ScatterPlot_Regression_Selected.png",
+          "count": 3,
+          "uniques": 3
+        },
+        {
+          "path": "/CSalcedoDataBI/PowerBI-Deneb/tree/main/Aggregate_Bar_Chart_With_Cross_Filtering",
+          "title": "/tree/main/Aggregate_Bar_Chart_With_Cross_Filtering",
+          "count": 3,
+          "uniques": 3
+        },
+        {
+          "path": "/CSalcedoDataBI/PowerBI-Deneb/tree/main/Barras_Eje_Dinamico/Files",
+          "title": "/tree/main/Barras_Eje_Dinamico/Files",
+          "count": 3,
+          "uniques": 3
+        },
+        {
+          "path": "/CSalcedoDataBI/PowerBI-Deneb/tree/main/Tarjetas_Dinamicas/Files",
+          "title": "/tree/main/Tarjetas_Dinamicas/Files",
+          "count": 3,
+          "uniques": 3
+        },
+        {
+          "path": "/CSalcedoDataBI/PowerBI-Deneb/blob/main/Grouped_Bar_Chart_(Multiple_Measure_With_Repeat)/Files/Grouped_Bar_Chart_(Multiple_Measure_With_Repeat).pbix",
+          "title": "/blob/main/Grouped_Bar_Chart_(Multiple_Measure_With_Repeat)/Files/Grouped_Bar_Chart_(Multiple_Measure_With_Repeat).pbix",
+          "count": 3,
+          "uniques": 2
+        },
+        {
+          "path": "/CSalcedoDataBI/PowerBI-Deneb/blob/main/Layered_Bar_Chart/Files/Layered_Bar_Chart.pbix",
+          "title": "/blob/main/Layered_Bar_Chart/Files/Layered_Bar_Chart.pbix",
+          "count": 3,
           "uniques": 2
         }
       ]
