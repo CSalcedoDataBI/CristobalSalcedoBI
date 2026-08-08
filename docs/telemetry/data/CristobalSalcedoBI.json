@@ -108,7 +108,7 @@
     },
     {
       "date": "2026-07-24",
-      "captured_at": "2026-08-07T04:06:08.499679+00:00",
+      "captured_at": "2026-08-08T03:03:24.831052+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 1,
@@ -121,7 +121,7 @@
     },
     {
       "date": "2026-07-25",
-      "captured_at": "2026-08-07T04:06:08.499679+00:00",
+      "captured_at": "2026-08-08T03:03:24.831052+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -134,7 +134,7 @@
     },
     {
       "date": "2026-07-26",
-      "captured_at": "2026-08-07T04:06:08.499679+00:00",
+      "captured_at": "2026-08-08T03:03:24.831052+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 7,
@@ -147,7 +147,7 @@
     },
     {
       "date": "2026-07-27",
-      "captured_at": "2026-08-07T04:06:08.499679+00:00",
+      "captured_at": "2026-08-08T03:03:24.831052+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -160,7 +160,7 @@
     },
     {
       "date": "2026-07-28",
-      "captured_at": "2026-08-07T04:06:08.499679+00:00",
+      "captured_at": "2026-08-08T03:03:24.831052+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 1,
@@ -173,7 +173,7 @@
     },
     {
       "date": "2026-07-29",
-      "captured_at": "2026-08-07T04:06:08.499679+00:00",
+      "captured_at": "2026-08-08T03:03:24.831052+00:00",
       "views_count": 2,
       "views_uniques": 1,
       "clones_count": 50,
@@ -199,7 +199,7 @@
     },
     {
       "date": "2026-07-30",
-      "captured_at": "2026-08-07T04:06:08.499679+00:00",
+      "captured_at": "2026-08-08T03:03:24.831052+00:00",
       "views_count": 8,
       "views_uniques": 1,
       "clones_count": 52,
@@ -225,7 +225,7 @@
     },
     {
       "date": "2026-07-31",
-      "captured_at": "2026-08-07T04:06:08.499679+00:00",
+      "captured_at": "2026-08-08T03:03:24.831052+00:00",
       "views_count": 1,
       "views_uniques": 1,
       "clones_count": 11,
@@ -263,7 +263,7 @@
     },
     {
       "date": "2026-08-01",
-      "captured_at": "2026-08-07T04:06:08.499679+00:00",
+      "captured_at": "2026-08-08T03:03:24.831052+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 10,
@@ -301,7 +301,7 @@
     },
     {
       "date": "2026-08-02",
-      "captured_at": "2026-08-07T04:06:08.499679+00:00",
+      "captured_at": "2026-08-08T03:03:24.831052+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 5,
@@ -339,7 +339,7 @@
     },
     {
       "date": "2026-08-03",
-      "captured_at": "2026-08-07T04:06:08.499679+00:00",
+      "captured_at": "2026-08-08T03:03:24.831052+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 5,
@@ -377,7 +377,7 @@
     },
     {
       "date": "2026-08-04",
-      "captured_at": "2026-08-07T04:06:08.499679+00:00",
+      "captured_at": "2026-08-08T03:03:24.831052+00:00",
       "views_count": 1,
       "views_uniques": 1,
       "clones_count": 4,
@@ -415,7 +415,7 @@
     },
     {
       "date": "2026-08-05",
-      "captured_at": "2026-08-07T04:06:08.499679+00:00",
+      "captured_at": "2026-08-08T03:03:24.831052+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 5,
@@ -453,12 +453,50 @@
     },
     {
       "date": "2026-08-06",
-      "captured_at": "2026-08-07T04:06:08.499679+00:00",
+      "captured_at": "2026-08-08T03:03:24.831052+00:00",
+      "views_count": 0,
+      "views_uniques": 0,
+      "clones_count": 5,
+      "clones_uniques": 4,
+      "actions_runs": 2,
+      "human_clones_count": 3,
+      "human_clones_uniques": 4,
+      "top_referrers": [
+        {
+          "referrer": "github.com",
+          "count": 12,
+          "uniques": 1
+        }
+      ],
+      "top_paths": [
+        {
+          "path": "/CSalcedoDataBI/CristobalSalcedoBI",
+          "title": "Overview",
+          "count": 8,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/CristobalSalcedoBI/branches",
+          "title": "/branches",
+          "count": 1,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/CristobalSalcedoBI/issues",
+          "title": "/issues",
+          "count": 1,
+          "uniques": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-08-07",
+      "captured_at": "2026-08-08T03:03:24.831052+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
       "clones_uniques": 0,
-      "actions_runs": 2,
+      "actions_runs": 3,
       "human_clones_count": 0,
       "human_clones_uniques": 0,
       "top_referrers": [
