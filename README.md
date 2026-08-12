@@ -43,7 +43,7 @@ python -m http.server 8000 --directory docs
 Estoy abierto a colaboraciones y oportunidades que enriquezcan el mundo del análisis de datos. Si tienes alguna idea o proyecto en mente, ¡conversemos!
 
 - [LinkedIn](https://www.linkedin.com/in/cristobal-salcedo)
-- Correo: [csalcedo90@gmail.com](mailto:csalcedo90@gmail.com)
+- Correo: [contacto@csalcedodatabi.com](mailto:contacto@csalcedodatabi.com)
 
 ## Contribuciones
 
