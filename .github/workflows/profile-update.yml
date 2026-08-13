@@ -1,0 +1,44 @@
+name: Actualizar README del perfil
+
+# Repo PUBLICO -> minutos de Actions gratis (regla R8).
+# Cron SEMANAL, no diario (regla R7): el blog y la galeria no cambian a diario.
+on:
+  schedule:
+    - cron: "20 6 * * 1" # lunes 06:20 UTC — 01:20 en Colombia
+  workflow_dispatch:
+
+# Un run por cambio; si se encolan dos, gana el ultimo (regla R2).
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest # nunca windows: cuenta x2 (regla R5)
+    timeout-minutes: 10 # el default son 360 (regla R3)
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generar bloques del README y la tarjeta
+        env:
+          # Token efimero del propio runner: no sale nada de GitHub y solo ve
+          # datos publicos, que es exactamente lo que el perfil debe anunciar.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python profile/scripts/update_profile.py --readme README.md --assets profile
+
+      - name: Commitear si algo cambio
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md profile/stats-light.svg profile/stats-dark.svg
+          git diff --staged --quiet && echo "sin cambios" && exit 0
+          git commit -m "chore(perfil): actualizar README y tarjeta de actividad"
+          git push

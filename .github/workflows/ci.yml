@@ -36,6 +36,14 @@ jobs:
             --max-line-length=100 \
             --fail-under=8.0
 
+      - name: Lint update_profile.py
+        run: |
+          pycodestyle --max-line-length=100 profile/scripts/update_profile.py
+          pylint profile/scripts/update_profile.py \
+            --disable=missing-module-docstring,missing-function-docstring \
+            --max-line-length=100 \
+            --fail-under=8.0
+
       - name: Run tests
         run: python -m pytest telemetry/scripts/test_snapshot.py -v --tb=short
 
