@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 320" width="1280" height="320" role="img" aria-label="Cristobal Salcedo — Business Intelligence, Power BI, Deneb/Vega y Microsoft Fabric">
+  <defs>
+    <linearGradient id="mark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#72EBC4"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#08110F"/>
+      <stop offset="100%" stop-color="#17241F"/>
+    </linearGradient>
+    <linearGradient id="rule" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#72EBC4"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.15"/>
+    </linearGradient>
+    <clipPath id="frame"><rect x="0" y="0" width="1280" height="320" rx="16"/></clipPath>
+    <g id="isotipo">
+      <circle cx="50" cy="50" r="46" fill="none" stroke="url(#mark)" stroke-width="1" stroke-opacity="0.15"/>
+      <circle cx="50" cy="50" r="46" fill="none" stroke="url(#mark)" stroke-width="2.5" stroke-linecap="round"/>
+      <g stroke="url(#mark)" stroke-width="1.2" fill="none" stroke-opacity="0.5">
+        <path d="M 50,22 L 75,40"/><path d="M 75,40 L 65,70"/><path d="M 65,70 L 35,70"/>
+        <path d="M 35,70 L 25,40"/><path d="M 25,40 L 50,22"/><path d="M 50,22 L 50,50"/>
+        <path d="M 75,40 L 50,50"/><path d="M 65,70 L 50,50"/><path d="M 35,70 L 50,50"/>
+        <path d="M 25,40 L 50,50"/>
+      </g>
+      <circle cx="50" cy="22" r="3.2" fill="url(#mark)"/>
+      <circle cx="75" cy="40" r="3.2" fill="url(#mark)"/>
+      <circle cx="65" cy="70" r="3.2" fill="url(#mark)"/>
+      <circle cx="35" cy="70" r="3.2" fill="url(#mark)"/>
+      <circle cx="25" cy="40" r="3.2" fill="url(#mark)"/>
+      <circle cx="50" cy="50" r="4.5" fill="url(#mark)"/>
+    </g>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="1280" height="320" fill="url(#bg)"/>
+    <g opacity="0.09" transform="translate(880,-90) scale(5)"><use href="#isotipo"/></g>
+    <rect x="0" y="0" width="1280" height="4" fill="url(#rule)"/>
+
+    <g transform="translate(72,88) scale(1.44)"><use href="#isotipo"/></g>
+
+    <g font-family="ui-sans-serif,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif">
+      <text x="288" y="140" font-size="54" font-weight="700" fill="#E4F0EC" letter-spacing="-0.5">Cristobal Salcedo</text>
+      <text x="288" y="186" font-size="23" font-weight="500" fill="#93A8A2">Business Intelligence · Power BI · Deneb / Vega · Microsoft Fabric</text>
+      <g transform="translate(288,222)">
+        <rect x="0" y="0" width="4" height="24" rx="2" fill="#72EBC4"/>
+        <text x="18" y="18" font-size="20" font-weight="600" fill="#72EBC4">csalcedodatabi.com</text>
+      </g>
+      <text x="288" y="272" font-size="17" font-weight="400" fill="#93A8A2">Plantillas de visualización, herramientas de automatización y agentes de datos.</text>
+    </g>
+  </g>
+  <rect x="0.5" y="0.5" width="1279" height="319" rx="16" fill="none" stroke="#263B35"/>
+</svg>
