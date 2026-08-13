@@ -270,23 +270,24 @@ def collect_account() -> tuple[dict, list[dict]]:
 # --------------------------------------------------------------------------
 
 def render_actividad(cuenta: dict, posts: list[str], plantillas: list[str]) -> list[str]:
-    """Tabla de actividad.
+    """Linea de actividad, en texto corrido.
+
+    NO es una tabla, y no por gusto: medido en la pagina publicada, una tabla
+    de estas cuatro metricas pide 345 px y la columna del README en un movil
+    mide 293, asi que la ultima quedaba tras una barra de scroll horizontal.
+    El texto corrido refluye y no puede recortarse a ningun ancho.
 
     Se miden las cifras que sostienen el argumento. Fuera seguidores y
     estrellas: eran los dos numeros mas flojos y estaban en el tipo mas grande
     de la pagina, asi que el ojo aterrizaba justo en la peor evidencia.
     """
-    celdas = [
-        ("Artículos publicados", len(posts)),
-        ("Plantillas Deneb", len(plantillas)),
-        ("Repos públicos", cuenta["repos"]),
-        ("Commits (12 meses)", cuenta["commits"]),
+    partes = [
+        f"**{len(posts)}** artículos publicados",
+        f"**{len(plantillas)}** plantillas Deneb",
+        f"**{cuenta['repos']}** repos públicos",
+        f"**{cuenta['commits']}** commits en 12 meses",
     ]
-    return [
-        "| " + " | ".join(e for e, _ in celdas) + " |",
-        "|" + "---:|" * len(celdas),
-        "| " + " | ".join(f"**{v}**" for _, v in celdas) + " |",
-    ]
+    return [" · ".join(partes)]
 
 
 def render_repos(repos: list[dict]) -> list[str]:

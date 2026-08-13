@@ -18,9 +18,7 @@ copian y pegan, y automatización que quita el trabajo manual de en medio.
 [contacto@csalcedodatabi.com](mailto:contacto@csalcedodatabi.com)
 
 <!-- actividad:start -->
-| Artículos publicados | Plantillas Deneb | Repos públicos | Commits (12 meses) |
-|---:|---:|---:|---:|
-| **29** | **25** | **10** | **403** |
+**29** artículos publicados · **25** plantillas Deneb · **10** repos públicos · **405** commits en 12 meses
 <!-- actividad:end -->
 
 ## Lo que construyo
