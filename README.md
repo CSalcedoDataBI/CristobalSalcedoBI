@@ -18,9 +18,7 @@ copian y pegan, y automatización que quita el trabajo manual de en medio.
 [contacto@csalcedodatabi.com](mailto:contacto@csalcedodatabi.com)
 
 <!-- actividad:start -->
-| Artículos publicados | Plantillas Deneb | Repos públicos | Commits (12 meses) |
-|---:|---:|---:|---:|
-| **29** | **25** | **10** | **403** |
+**29** artículos publicados · **25** plantillas Deneb · **10** repos públicos · **405** commits en 12 meses
 <!-- actividad:end -->
 
 ## Lo que construyo
@@ -83,7 +81,7 @@ Todas en [la galería](https://csalcedodatabi.com/deneb)
 
 ## Cómo se mantiene esto
 
-La tabla de actividad y las tres listas de arriba las genera
+La línea de actividad y las tres listas de arriba las genera
 [`profile/scripts/update_profile.py`](profile/scripts/update_profile.py) una vez por semana,
 leyendo el RSS del sitio y la API de GitHub. Sin servicios de terceros: nada de este perfil
 depende de un dominio que no sea mío. Todo lo que escribe es **texto**, no imágenes: un SVG
