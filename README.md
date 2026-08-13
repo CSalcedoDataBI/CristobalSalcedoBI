@@ -18,7 +18,7 @@ copian y pegan, y automatización que quita el trabajo manual de en medio.
 [contacto@csalcedodatabi.com](mailto:contacto@csalcedodatabi.com)
 
 <!-- actividad:start -->
-**29** artículos publicados · **25** plantillas Deneb · **10** repos públicos · **408** commits en 12 meses
+**29** artículos publicados · **25** plantillas Deneb · **10** repos públicos · **409** commits en 12 meses
 <!-- actividad:end -->
 
 ## Lo que hago, en imágenes
@@ -30,26 +30,15 @@ copian y pegan, y automatización que quita el trabajo manual de en medio.
 **Explorador de KPIs por categoría** — un tablero entero escrito en Deneb: eliges el año y la
 métrica, y las seis tarjetas se recalculan con su tendencia.
 
-<table>
-<tr>
-<td width="50%">
 <a href="https://csalcedodatabi.com/deneb">
-  <img src="profile/showcase/calendar-heatmap.webp" alt="Mapa de calor de calendario" width="100%">
+  <img src="profile/showcase/calendar-heatmap.webp" alt="Mapa de calor de calendario" width="400">
+</a>
+<a href="https://csalcedodatabi.com/deneb">
+  <img src="profile/showcase/ranking-bump-chart.webp" alt="Ranking bump chart" width="400">
 </a>
 
 **Mapa de calor de calendario** — 53 semanas × 7 días a partir de UNA columna de fecha.
-
-</td>
-<td width="50%">
-<a href="https://csalcedodatabi.com/deneb">
-  <img src="profile/showcase/ranking-bump-chart.webp" alt="Ranking bump chart" width="100%">
-</a>
-
 **Ranking bump chart** — cómo se mueve el top 6 mes a mes.
-
-</td>
-</tr>
-</table>
 
 Las 25 plantillas, con su spec listo para copiar, en
 [csalcedodatabi.com/deneb](https://csalcedodatabi.com/deneb).
