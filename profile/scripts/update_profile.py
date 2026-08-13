@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
 """Genera el README del perfil CSalcedoDataBI/CSalcedoDataBI.
 
-Rellena los bloques marcados del README y dibuja la tarjeta de estadisticas.
-Sin dependencias: solo biblioteca estandar. Sin servicios de terceros: todo
-sale de la API de GitHub y del RSS del sitio.
+Rellena los bloques marcados del README. Sin dependencias: solo biblioteca
+estandar. Sin servicios de terceros: todo sale de la API de GitHub y del RSS
+del sitio.
 
 Uso:  GITHUB_TOKEN=... python3 update_profile.py [--readme README.md]
+
+Todo lo que escribe es texto markdown, nunca una imagen. Un SVG con texto
+dentro se encoge con la columna: en un movil de 390 px el README ocupa 293 y
+las etiquetas de una tarjeta de 860 px quedaban en 4 px, ilegibles, ademas de
+invisibles para un lector de pantalla (WCAG 1.4.5, imagenes de texto).
 
 Si una fuente falla, su bloque se deja INTACTO y el script termina en 1.
 Nunca se publica una seccion vacia por un fallo de red.
@@ -22,7 +27,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
-from datetime import datetime, timezone
+from datetime import datetime
 from email.utils import parsedate_to_datetime
 
 # --------------------------------------------------------------------------
@@ -73,20 +78,6 @@ REPO_GROUPS: list[tuple[str, list[tuple[str, str]]]] = [
         ],
     ),
 ]
-
-# Paleta Fabric flow — identica a src/styles/global.css del sitio.
-THEMES = {
-    "light": {
-        "bg0": "#FFFFFF", "bg1": "#E8F2EF", "text": "#0B1A17",
-        "muted": "#44544F", "accent": "#116B62", "border": "#CFE3DD",
-        "g0": "#0d9488", "g1": "#0ea5e9",
-    },
-    "dark": {
-        "bg0": "#08110F", "bg1": "#17241F", "text": "#E4F0EC",
-        "muted": "#93A8A2", "accent": "#72EBC4", "border": "#263B35",
-        "g0": "#72EBC4", "g1": "#38BDF8",
-    },
-}
 
 API = "https://api.github.com"
 GRAPHQL = "https://api.github.com/graphql"
@@ -156,31 +147,30 @@ def es_date(iso: str) -> str:
 
 
 # --------------------------------------------------------------------------
-# Fuentes
+# Fuentes — cada una devuelve la lista COMPLETA; el recorte es cosa del render
 # --------------------------------------------------------------------------
 
-def collect_posts() -> list[str]:
-    """Ultimos articulos del blog, desde el RSS del sitio."""
+def fetch_posts() -> list[str]:
+    """Articulos del blog, del mas reciente al mas antiguo, desde el RSS."""
     raw = http_get(RSS_URL, auth=False, accept="application/xml")
-    root = ET.fromstring(raw)
-    items = root.findall("./channel/item")
+    items = ET.fromstring(raw).findall("./channel/item")
     if not items:
         raise RuntimeError("el RSS no trajo items")
 
-    lines = []
-    for item in items[:MAX_POSTS]:
-        title = (item.findtext("title") or "").strip()
-        link = (item.findtext("link") or "").strip()
+    lineas = []
+    for item in items:
+        titulo = (item.findtext("title") or "").strip()
+        enlace = (item.findtext("link") or "").strip()
         pub = (item.findtext("pubDate") or "").strip()
         try:
             fecha = es_date(parsedate_to_datetime(pub).isoformat())
         except (TypeError, ValueError):
             fecha = ""
-        if not link.startswith("http"):
-            link = f"{SITE}{link}"
+        if not enlace.startswith("http"):
+            enlace = f"{SITE}{enlace}"
         sufijo = f" — {fecha}" if fecha else ""
-        lines.append(f"[{title}]({link}){sufijo}")
-    return lines
+        lineas.append(f"[{titulo}]({enlace}){sufijo}")
+    return lineas
 
 
 def fecha_de_alta(repo: str, carpeta: str) -> str | None:
@@ -202,7 +192,7 @@ def fecha_de_alta(repo: str, carpeta: str) -> str | None:
     return commits[0]["commit"]["committer"]["date"]
 
 
-def collect_templates() -> list[str]:
+def fetch_templates() -> list[str]:
     """Plantillas de la galeria, de la mas reciente a la mas antigua."""
     tree = rest(f"/repos/{OWNER}/{GALLERY_REPO}/contents")
     dirs = [e["name"] for e in tree if e["type"] == "dir"]
@@ -216,15 +206,15 @@ def collect_templates() -> list[str]:
             fechas.append((alta, name))
 
     fechas.sort(reverse=True)
-    lines = []
-    for iso, name in fechas[:MAX_TEMPLATES]:
+    lineas = []
+    for iso, name in fechas:
         titulo = name.replace("_", " ").strip()
         url = f"https://github.com/{OWNER}/{GALLERY_REPO}/tree/main/{urllib.parse.quote(name)}"
-        lines.append(f"[{titulo}]({url}) — {es_date(iso)}")
-    return lines
+        lineas.append(f"[{titulo}]({url}) — {es_date(iso)}")
+    return lineas
 
 
-def collect_releases(repos: list[dict]) -> list[str]:
+def fetch_releases(repos: list[dict]) -> list[str]:
     """Ultimas versiones publicadas en cualquier repo publico."""
     todas: list[tuple[str, str]] = []
     for repo in repos:
@@ -244,7 +234,7 @@ def collect_releases(repos: list[dict]) -> list[str]:
     if not todas:
         raise RuntimeError("ningun repo publico tiene releases")
     todas.sort(reverse=True)
-    return [linea for _, linea in todas[:MAX_RELEASES]]
+    return [linea for _, linea in todas]
 
 
 def collect_account() -> tuple[dict, list[dict]]:
@@ -253,38 +243,54 @@ def collect_account() -> tuple[dict, list[dict]]:
     OJO con el token: `contributionsCollection` devuelve lo que el token puede
     ver. Con el GITHUB_TOKEN del workflow salen las contribuciones PUBLICAS,
     que es justo lo que debe anunciar un perfil publico. Si ejecutas esto en
-    local con un PAT personal amplio, los commits y PRs saldran MUY inflados
-    porque incluyen los repos privados: no compares ambas cifras.
+    local con un PAT personal amplio, los commits saldran MUY inflados porque
+    incluyen los repos privados: no compares ambas cifras.
     """
     query = """
     query($login: String!) {
       user(login: $login) {
-        followers { totalCount }
         repositories(first: 100, privacy: PUBLIC, isFork: false,
                      ownerAffiliations: OWNER, orderBy: {field: STARGAZERS, direction: DESC}) {
           totalCount
-          nodes { name stargazerCount description }
+          nodes { name stargazerCount }
         }
-        contributionsCollection {
-          totalCommitContributions
-          totalPullRequestContributions
-        }
+        contributionsCollection { totalCommitContributions }
       }
     }"""
     user = graphql(query, {"login": OWNER})["user"]
-    repos = user["repositories"]["nodes"]
     cuenta = {
-        "followers": user["followers"]["totalCount"],
         "repos": user["repositories"]["totalCount"],
-        "stars": sum(r["stargazerCount"] for r in repos),
         "commits": user["contributionsCollection"]["totalCommitContributions"],
-        "prs": user["contributionsCollection"]["totalPullRequestContributions"],
     }
-    return cuenta, repos
+    return cuenta, user["repositories"]["nodes"]
+
+
+# --------------------------------------------------------------------------
+# Render — solo markdown, nunca una imagen con texto dentro
+# --------------------------------------------------------------------------
+
+def render_actividad(cuenta: dict, posts: list[str], plantillas: list[str]) -> list[str]:
+    """Tabla de actividad.
+
+    Se miden las cifras que sostienen el argumento. Fuera seguidores y
+    estrellas: eran los dos numeros mas flojos y estaban en el tipo mas grande
+    de la pagina, asi que el ojo aterrizaba justo en la peor evidencia.
+    """
+    celdas = [
+        ("Artículos publicados", len(posts)),
+        ("Plantillas Deneb", len(plantillas)),
+        ("Repos públicos", cuenta["repos"]),
+        ("Commits (12 meses)", cuenta["commits"]),
+    ]
+    return [
+        "| " + " | ".join(e for e, _ in celdas) + " |",
+        "|" + "---:|" * len(celdas),
+        "| " + " | ".join(f"**{v}**" for _, v in celdas) + " |",
+    ]
 
 
 def render_repos(repos: list[dict]) -> list[str]:
-    """Tabla de repos agrupada por linea de trabajo, con estrellas reales."""
+    """Repos agrupados por linea de trabajo, con estrellas reales."""
     estrellas = {r["name"]: r["stargazerCount"] for r in repos}
     out: list[str] = []
     for titulo, entradas in REPO_GROUPS:
@@ -299,75 +305,17 @@ def render_repos(repos: list[dict]) -> list[str]:
     return out
 
 
-# --------------------------------------------------------------------------
-# Tarjeta de estadisticas
-# --------------------------------------------------------------------------
-
-def render_stats_svg(cuenta: dict, theme: str) -> str:
-    c = THEMES[theme]
-    celdas = [
-        ("Repos públicos", cuenta["repos"]),
-        ("Estrellas", cuenta["stars"]),
-        ("Commits (12 meses)", cuenta["commits"]),
-        ("Pull requests", cuenta["prs"]),
-        ("Seguidores", cuenta["followers"]),
-    ]
-    ahora = es_date(datetime.now(timezone.utc).isoformat())
-    ancho, alto = 860, 190
-    paso = (ancho - 96) / len(celdas)
-
-    partes = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {ancho} {alto}" '
-        f'width="{ancho}" height="{alto}" role="img" '
-        f'aria-label="Estadisticas publicas de {OWNER}">',
-        "<defs>",
-        f'<linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">'
-        f'<stop offset="0%" stop-color="{c["bg0"]}"/>'
-        f'<stop offset="100%" stop-color="{c["bg1"]}"/></linearGradient>',
-        f'<linearGradient id="rule" x1="0%" y1="0%" x2="100%" y2="0%">'
-        f'<stop offset="0%" stop-color="{c["g0"]}"/>'
-        f'<stop offset="100%" stop-color="{c["g1"]}" stop-opacity="0.15"/></linearGradient>',
-        "</defs>",
-        f'<rect x="0.5" y="0.5" width="{ancho - 1}" height="{alto - 1}" rx="14" '
-        f'fill="url(#bg)" stroke="{c["border"]}"/>',
-        f'<rect x="14" y="1" width="{ancho - 28}" height="3" fill="url(#rule)"/>',
-        '<g font-family="ui-sans-serif,-apple-system,BlinkMacSystemFont,Segoe UI,'
-        'Roboto,Helvetica,Arial,sans-serif">',
-        f'<text x="48" y="56" font-size="19" font-weight="700" fill="{c["text"]}">'
-        f"Actividad pública</text>",
-        f'<text x="48" y="80" font-size="14" fill="{c["muted"]}">'
-        f"Generado desde la API de GitHub · actualizado {ahora}</text>",
-    ]
-    for i, (etiqueta, valor) in enumerate(celdas):
-        x = 48 + paso * i
-        partes.append(
-            f'<text x="{x:.0f}" y="140" font-size="38" font-weight="700" '
-            f'fill="{c["accent"]}">{valor}</text>'
-        )
-        partes.append(
-            f'<text x="{x:.0f}" y="164" font-size="13" fill="{c["muted"]}">{etiqueta}</text>'
-        )
-    partes.append("</g></svg>")
-    return "\n".join(partes) + "\n"
-
-
-# --------------------------------------------------------------------------
-# Sustitucion de bloques
-# --------------------------------------------------------------------------
-
 def replace_block(texto: str, nombre: str, lineas: list[str]) -> str:
     inicio, fin = f"<!-- {nombre}:start -->", f"<!-- {nombre}:end -->"
-    patron = re.compile(
-        re.escape(inicio) + r".*?" + re.escape(fin), re.DOTALL
-    )
+    patron = re.compile(re.escape(inicio) + r".*?" + re.escape(fin), re.DOTALL)
     if not patron.search(texto):
         raise RuntimeError(f"no encuentro los marcadores de '{nombre}' en el README")
     cuerpo = "\n".join(lineas)
     return patron.sub(f"{inicio}\n{cuerpo}\n{fin}", texto)
 
 
-def as_list(lineas: list[str]) -> list[str]:
-    return [f"- {linea}" for linea in lineas]
+def as_list(lineas: list[str], tope: int) -> list[str]:
+    return [f"- {linea}" for linea in lineas[:tope]]
 
 
 # --------------------------------------------------------------------------
@@ -375,7 +323,6 @@ def as_list(lineas: list[str]) -> list[str]:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--readme", default="README.md")
-    ap.add_argument("--assets", default="profile")
     args = ap.parse_args()
 
     with open(args.readme, encoding="utf-8") as fh:
@@ -385,18 +332,21 @@ def main() -> int:
 
     try:
         cuenta, repos = collect_account()
-    # A proposito: da igual por que fallo (red, token, esquema). Sin esta
-    # consulta no hay ni repos ni tarjeta, asi que se aborta sin tocar nada.
+        posts = fetch_posts()
+        plantillas = fetch_templates()
+    # A proposito: da igual por que fallo (red, token, esquema). Sin estas tres
+    # fuentes no hay ni bloques ni tabla, asi que se aborta sin tocar nada.
     # pylint: disable-next=broad-exception-caught
     except Exception as exc:
-        print(f"ERROR: no pude leer la cuenta: {exc}", file=sys.stderr)
+        print(f"ERROR: no pude leer las fuentes: {exc}", file=sys.stderr)
         return 1
 
     bloques = {
-        "blog": lambda: as_list(collect_posts()),
-        "plantillas": lambda: as_list(collect_templates()),
-        "releases": lambda: as_list(collect_releases(repos)),
+        "actividad": lambda: render_actividad(cuenta, posts, plantillas),
         "repos": lambda: render_repos(repos),
+        "blog": lambda: as_list(posts, MAX_POSTS),
+        "plantillas": lambda: as_list(plantillas, MAX_TEMPLATES),
+        "releases": lambda: as_list(fetch_releases(repos), MAX_RELEASES),
     }
 
     for nombre, recolectar in bloques.items():
@@ -409,13 +359,6 @@ def main() -> int:
         except Exception as exc:
             fallos.append(f"{nombre}: {exc}")
             print(f"AVISO {nombre} sin tocar — {exc}", file=sys.stderr)
-
-    os.makedirs(args.assets, exist_ok=True)
-    for tema in THEMES:
-        destino = os.path.join(args.assets, f"stats-{tema}.svg")
-        with open(destino, "w", encoding="utf-8") as fh:
-            fh.write(render_stats_svg(cuenta, tema))
-        print(f"ok    {destino}")
 
     with open(args.readme, "w", encoding="utf-8") as fh:
         fh.write(readme)
