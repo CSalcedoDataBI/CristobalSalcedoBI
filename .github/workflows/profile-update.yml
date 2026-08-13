@@ -32,13 +32,13 @@ jobs:
           # Token efimero del propio runner: no sale nada de GitHub y solo ve
           # datos publicos, que es exactamente lo que el perfil debe anunciar.
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python profile/scripts/update_profile.py --readme README.md --assets profile
+        run: python profile/scripts/update_profile.py --readme README.md
 
       - name: Commitear si algo cambio
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md profile/stats-light.svg profile/stats-dark.svg
+          git add README.md
           git diff --staged --quiet && echo "sin cambios" && exit 0
-          git commit -m "chore(perfil): actualizar README y tarjeta de actividad"
+          git commit -m "chore(perfil): actualizar el README"
           git push
