@@ -326,7 +326,10 @@ def main() -> int:
     ap.add_argument("--readme", default="README.md")
     args = ap.parse_args()
 
-    with open(args.readme, encoding="utf-8") as fh:
+    # newline="" al leer y LF explicito al escribir: sin esto los saltos
+    # dependerian del sistema operativo (CRLF en Windows, LF en el runner) y
+    # cada ejecucion reescribiria el archivo entero en el otro formato.
+    with open(args.readme, encoding="utf-8", newline="") as fh:
         readme = fh.read()
 
     fallos: list[str] = []
@@ -361,7 +364,7 @@ def main() -> int:
             fallos.append(f"{nombre}: {exc}")
             print(f"AVISO {nombre} sin tocar — {exc}", file=sys.stderr)
 
-    with open(args.readme, "w", encoding="utf-8") as fh:
+    with open(args.readme, "w", encoding="utf-8", newline="\n") as fh:
         fh.write(readme)
 
     if fallos:
