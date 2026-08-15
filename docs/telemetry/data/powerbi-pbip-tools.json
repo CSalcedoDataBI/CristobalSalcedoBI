@@ -321,7 +321,7 @@
     },
     {
       "date": "2026-07-31",
-      "captured_at": "2026-08-14T03:32:47.759606+00:00",
+      "captured_at": "2026-08-15T02:28:44.680875+00:00",
       "views_count": 1,
       "views_uniques": 1,
       "clones_count": 1,
@@ -359,7 +359,7 @@
     },
     {
       "date": "2026-08-01",
-      "captured_at": "2026-08-14T03:32:47.759606+00:00",
+      "captured_at": "2026-08-15T02:28:44.680875+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 1,
@@ -397,7 +397,7 @@
     },
     {
       "date": "2026-08-02",
-      "captured_at": "2026-08-14T03:32:47.759606+00:00",
+      "captured_at": "2026-08-15T02:28:44.680875+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 2,
@@ -435,7 +435,7 @@
     },
     {
       "date": "2026-08-03",
-      "captured_at": "2026-08-14T03:32:47.759606+00:00",
+      "captured_at": "2026-08-15T02:28:44.680875+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -473,7 +473,7 @@
     },
     {
       "date": "2026-08-04",
-      "captured_at": "2026-08-14T03:32:47.759606+00:00",
+      "captured_at": "2026-08-15T02:28:44.680875+00:00",
       "views_count": 12,
       "views_uniques": 2,
       "clones_count": 1,
@@ -511,7 +511,7 @@
     },
     {
       "date": "2026-08-05",
-      "captured_at": "2026-08-14T03:32:47.759606+00:00",
+      "captured_at": "2026-08-15T02:28:44.680875+00:00",
       "views_count": 2,
       "views_uniques": 1,
       "clones_count": 0,
@@ -583,7 +583,7 @@
     },
     {
       "date": "2026-08-06",
-      "captured_at": "2026-08-14T03:32:47.759606+00:00",
+      "captured_at": "2026-08-15T02:28:44.680875+00:00",
       "views_count": 1,
       "views_uniques": 1,
       "clones_count": 0,
@@ -649,7 +649,7 @@
     },
     {
       "date": "2026-08-07",
-      "captured_at": "2026-08-14T03:32:47.759606+00:00",
+      "captured_at": "2026-08-15T02:28:44.680875+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -715,7 +715,7 @@
     },
     {
       "date": "2026-08-08",
-      "captured_at": "2026-08-14T03:32:47.759606+00:00",
+      "captured_at": "2026-08-15T02:28:44.680875+00:00",
       "views_count": 53,
       "views_uniques": 1,
       "clones_count": 1,
@@ -781,7 +781,7 @@
     },
     {
       "date": "2026-08-09",
-      "captured_at": "2026-08-14T03:32:47.759606+00:00",
+      "captured_at": "2026-08-15T02:28:44.680875+00:00",
       "views_count": 228,
       "views_uniques": 5,
       "clones_count": 0,
@@ -871,7 +871,7 @@
     },
     {
       "date": "2026-08-10",
-      "captured_at": "2026-08-14T03:32:47.759606+00:00",
+      "captured_at": "2026-08-15T02:28:44.680875+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -961,7 +961,7 @@
     },
     {
       "date": "2026-08-11",
-      "captured_at": "2026-08-14T03:32:47.759606+00:00",
+      "captured_at": "2026-08-15T02:28:44.680875+00:00",
       "views_count": 11,
       "views_uniques": 1,
       "clones_count": 1,
@@ -1051,7 +1051,7 @@
     },
     {
       "date": "2026-08-12",
-      "captured_at": "2026-08-14T03:32:47.759606+00:00",
+      "captured_at": "2026-08-15T02:28:44.680875+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 2,
@@ -1141,14 +1141,14 @@
     },
     {
       "date": "2026-08-13",
-      "captured_at": "2026-08-14T03:32:47.759606+00:00",
-      "views_count": 0,
-      "views_uniques": 0,
-      "clones_count": 0,
-      "clones_uniques": 0,
+      "captured_at": "2026-08-15T02:28:44.680875+00:00",
+      "views_count": 1,
+      "views_uniques": 1,
+      "clones_count": 1,
+      "clones_uniques": 1,
       "actions_runs": 0,
-      "human_clones_count": 0,
-      "human_clones_uniques": 0,
+      "human_clones_count": 1,
+      "human_clones_uniques": 1,
       "top_referrers": [
         {
           "referrer": "github.com",
@@ -1171,6 +1171,96 @@
           "path": "/CSalcedoDataBI/powerbi-pbip-tools",
           "title": "Overview",
           "count": 28,
+          "uniques": 9
+        },
+        {
+          "path": "/CSalcedoDataBI/powerbi-pbip-tools/tree/main/skills",
+          "title": "/tree/main/skills",
+          "count": 17,
+          "uniques": 3
+        },
+        {
+          "path": "/CSalcedoDataBI/powerbi-pbip-tools/tree/main/examples/DAX-User-Defined-Functions/DAX User-Defined Functions.SemanticModel/TMDLScripts",
+          "title": "/tree/main/examples/DAX-User-Defined-Functions/DAX User-Defined Functions.SemanticModel/TMDLScripts",
+          "count": 13,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/powerbi-pbip-tools/tree/main/skills/skill-semantic-architect-powerbi",
+          "title": "/tree/main/skills/skill-semantic-architect-powerbi",
+          "count": 12,
+          "uniques": 3
+        },
+        {
+          "path": "/CSalcedoDataBI/powerbi-pbip-tools/tree/main/examples/DAX-User-Defined-Functions",
+          "title": "/tree/main/examples/DAX-User-Defined-Functions",
+          "count": 12,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/powerbi-pbip-tools/tree/main/examples/DAX-User-Defined-Functions/DAX User-Defined Functions.SemanticModel",
+          "title": "/tree/main/examples/DAX-User-Defined-Functions/DAX User-Defined Functions.SemanticModel",
+          "count": 11,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/powerbi-pbip-tools/tree/main/examples",
+          "title": "/tree/main/examples",
+          "count": 9,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/powerbi-pbip-tools/tree/main/docs",
+          "title": "/tree/main/docs",
+          "count": 8,
+          "uniques": 2
+        },
+        {
+          "path": "/CSalcedoDataBI/powerbi-pbip-tools/blob/main/docs/skill-svg-recolor-powerbi-guide.md",
+          "title": "/blob/main/docs/skill-svg-recolor-powerbi-guide.md",
+          "count": 7,
+          "uniques": 2
+        },
+        {
+          "path": "/CSalcedoDataBI/powerbi-pbip-tools/tree/main/examples/DAX-User-Defined-Functions/DAX User-Defined Functions.Report",
+          "title": "/tree/main/examples/DAX-User-Defined-Functions/DAX User-Defined Functions.Report",
+          "count": 7,
+          "uniques": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-08-14",
+      "captured_at": "2026-08-15T02:28:44.680875+00:00",
+      "views_count": 0,
+      "views_uniques": 0,
+      "clones_count": 0,
+      "clones_uniques": 0,
+      "actions_runs": 0,
+      "human_clones_count": 0,
+      "human_clones_uniques": 0,
+      "top_referrers": [
+        {
+          "referrer": "github.com",
+          "count": 266,
+          "uniques": 5
+        },
+        {
+          "referrer": "Google",
+          "count": 16,
+          "uniques": 2
+        },
+        {
+          "referrer": "csalcedodatabi.com",
+          "count": 1,
+          "uniques": 1
+        }
+      ],
+      "top_paths": [
+        {
+          "path": "/CSalcedoDataBI/powerbi-pbip-tools",
+          "title": "Overview",
+          "count": 27,
           "uniques": 9
         },
         {
