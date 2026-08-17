@@ -18,7 +18,7 @@ copian y pegan, y automatización que quita el trabajo manual de en medio.
 [contacto@csalcedodatabi.com](mailto:contacto@csalcedodatabi.com)
 
 <!-- actividad:start -->
-**29** artículos publicados · **25** plantillas Deneb · **10** repos públicos · **409** commits en 12 meses
+**29** artículos publicados · **26** plantillas Deneb · **10** repos públicos · **415** commits en 12 meses
 <!-- actividad:end -->
 
 ## Lo que hago, en imágenes
@@ -85,11 +85,11 @@ Todo en [csalcedodatabi.com/blog](https://csalcedodatabi.com/blog)
 ### Plantillas nuevas en la galería
 
 <!-- plantillas:start -->
+- [Combo Barras Linea](https://github.com/CSalcedoDataBI/PowerBI-Deneb/tree/main/Combo_Barras_Linea) — 14 ago 2026
 - [Calendar Heatmap](https://github.com/CSalcedoDataBI/PowerBI-Deneb/tree/main/Calendar_Heatmap) — 12 ago 2026
 - [Ranking Bump Chart](https://github.com/CSalcedoDataBI/PowerBI-Deneb/tree/main/Ranking_Bump_Chart) — 8 ago 2026
 - [Multiples Tarjetas](https://github.com/CSalcedoDataBI/PowerBI-Deneb/tree/main/Multiples_Tarjetas) — 10 may 2025
 - [Diverging Stacked Bar Chart Population Pyramid](https://github.com/CSalcedoDataBI/PowerBI-Deneb/tree/main/Diverging_Stacked_Bar_Chart_Population_Pyramid) — 26 sep 2024
-- [Layered Bar Chart](https://github.com/CSalcedoDataBI/PowerBI-Deneb/tree/main/Layered_Bar_Chart) — 6 sep 2024
 <!-- plantillas:end -->
 
 Todas en [la galería](https://csalcedodatabi.com/deneb)
