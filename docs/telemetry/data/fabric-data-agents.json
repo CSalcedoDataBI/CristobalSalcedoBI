@@ -683,7 +683,7 @@
     },
     {
       "date": "2026-08-04",
-      "captured_at": "2026-08-18T02:31:43.990553+00:00",
+      "captured_at": "2026-08-19T02:34:40.320847+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -768,7 +768,7 @@
     },
     {
       "date": "2026-08-05",
-      "captured_at": "2026-08-18T02:31:43.990553+00:00",
+      "captured_at": "2026-08-19T02:34:40.320847+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -853,7 +853,7 @@
     },
     {
       "date": "2026-08-06",
-      "captured_at": "2026-08-18T02:31:43.990553+00:00",
+      "captured_at": "2026-08-19T02:34:40.320847+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 2,
@@ -938,7 +938,7 @@
     },
     {
       "date": "2026-08-07",
-      "captured_at": "2026-08-18T02:31:43.990553+00:00",
+      "captured_at": "2026-08-19T02:34:40.320847+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -1023,7 +1023,7 @@
     },
     {
       "date": "2026-08-08",
-      "captured_at": "2026-08-18T02:31:43.990553+00:00",
+      "captured_at": "2026-08-19T02:34:40.320847+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 2,
@@ -1108,7 +1108,7 @@
     },
     {
       "date": "2026-08-09",
-      "captured_at": "2026-08-18T02:31:43.990553+00:00",
+      "captured_at": "2026-08-19T02:34:40.320847+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 1,
@@ -1193,7 +1193,7 @@
     },
     {
       "date": "2026-08-10",
-      "captured_at": "2026-08-18T02:31:43.990553+00:00",
+      "captured_at": "2026-08-19T02:34:40.320847+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -1278,7 +1278,7 @@
     },
     {
       "date": "2026-08-11",
-      "captured_at": "2026-08-18T02:31:43.990553+00:00",
+      "captured_at": "2026-08-19T02:34:40.320847+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -1363,7 +1363,7 @@
     },
     {
       "date": "2026-08-12",
-      "captured_at": "2026-08-18T02:31:43.990553+00:00",
+      "captured_at": "2026-08-19T02:34:40.320847+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 2,
@@ -1443,7 +1443,7 @@
     },
     {
       "date": "2026-08-13",
-      "captured_at": "2026-08-18T02:31:43.990553+00:00",
+      "captured_at": "2026-08-19T02:34:40.320847+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -1475,7 +1475,7 @@
     },
     {
       "date": "2026-08-14",
-      "captured_at": "2026-08-18T02:31:43.990553+00:00",
+      "captured_at": "2026-08-19T02:34:40.320847+00:00",
       "views_count": 1,
       "views_uniques": 1,
       "clones_count": 1,
@@ -1507,7 +1507,7 @@
     },
     {
       "date": "2026-08-15",
-      "captured_at": "2026-08-18T02:31:43.990553+00:00",
+      "captured_at": "2026-08-19T02:34:40.320847+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -1533,7 +1533,33 @@
     },
     {
       "date": "2026-08-16",
-      "captured_at": "2026-08-17T02:36:40.315609+00:00",
+      "captured_at": "2026-08-19T02:34:40.320847+00:00",
+      "views_count": 0,
+      "views_uniques": 0,
+      "clones_count": 1,
+      "clones_uniques": 1,
+      "actions_runs": 0,
+      "human_clones_count": 1,
+      "human_clones_uniques": 1,
+      "top_referrers": [
+        {
+          "referrer": "Google",
+          "count": 1,
+          "uniques": 1
+        }
+      ],
+      "top_paths": [
+        {
+          "path": "/CSalcedoDataBI/fabric-data-agents",
+          "title": "Overview",
+          "count": 1,
+          "uniques": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-08-17",
+      "captured_at": "2026-08-19T02:34:40.320847+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -1558,8 +1584,8 @@
       ]
     },
     {
-      "date": "2026-08-17",
-      "captured_at": "2026-08-18T02:31:43.990553+00:00",
+      "date": "2026-08-18",
+      "captured_at": "2026-08-19T02:34:40.320847+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
