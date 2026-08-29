@@ -1121,7 +1121,7 @@
     },
     {
       "date": "2026-08-14",
-      "captured_at": "2026-08-28T12:59:37.090624+00:00",
+      "captured_at": "2026-08-29T07:56:54.632979+00:00",
       "views_count": 1,
       "views_uniques": 1,
       "clones_count": 1,
@@ -1206,7 +1206,7 @@
     },
     {
       "date": "2026-08-15",
-      "captured_at": "2026-08-28T12:59:37.090624+00:00",
+      "captured_at": "2026-08-29T07:56:54.632979+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 1,
@@ -1291,7 +1291,7 @@
     },
     {
       "date": "2026-08-16",
-      "captured_at": "2026-08-28T12:59:37.090624+00:00",
+      "captured_at": "2026-08-29T07:56:54.632979+00:00",
       "views_count": 1,
       "views_uniques": 1,
       "clones_count": 0,
@@ -1376,7 +1376,7 @@
     },
     {
       "date": "2026-08-17",
-      "captured_at": "2026-08-28T12:59:37.090624+00:00",
+      "captured_at": "2026-08-29T07:56:54.632979+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 2,
@@ -1461,7 +1461,7 @@
     },
     {
       "date": "2026-08-18",
-      "captured_at": "2026-08-28T12:59:37.090624+00:00",
+      "captured_at": "2026-08-29T07:56:54.632979+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 2,
@@ -1546,7 +1546,7 @@
     },
     {
       "date": "2026-08-19",
-      "captured_at": "2026-08-28T12:59:37.090624+00:00",
+      "captured_at": "2026-08-29T07:56:54.632979+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 2,
@@ -1631,7 +1631,7 @@
     },
     {
       "date": "2026-08-20",
-      "captured_at": "2026-08-28T12:59:37.090624+00:00",
+      "captured_at": "2026-08-29T07:56:54.632979+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 22,
@@ -1716,7 +1716,7 @@
     },
     {
       "date": "2026-08-21",
-      "captured_at": "2026-08-28T12:59:37.090624+00:00",
+      "captured_at": "2026-08-29T07:56:54.632979+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -1801,7 +1801,7 @@
     },
     {
       "date": "2026-08-22",
-      "captured_at": "2026-08-28T12:59:37.090624+00:00",
+      "captured_at": "2026-08-29T07:56:54.632979+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -1886,7 +1886,7 @@
     },
     {
       "date": "2026-08-23",
-      "captured_at": "2026-08-28T12:59:37.090624+00:00",
+      "captured_at": "2026-08-29T07:56:54.632979+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -1971,7 +1971,7 @@
     },
     {
       "date": "2026-08-24",
-      "captured_at": "2026-08-28T12:59:37.090624+00:00",
+      "captured_at": "2026-08-29T07:56:54.632979+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -2009,7 +2009,7 @@
     },
     {
       "date": "2026-08-25",
-      "captured_at": "2026-08-28T12:59:37.090624+00:00",
+      "captured_at": "2026-08-29T07:56:54.632979+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 1,
@@ -2047,7 +2047,7 @@
     },
     {
       "date": "2026-08-26",
-      "captured_at": "2026-08-28T12:59:37.090624+00:00",
+      "captured_at": "2026-08-29T07:56:54.632979+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -2085,7 +2085,33 @@
     },
     {
       "date": "2026-08-27",
-      "captured_at": "2026-08-28T12:59:37.090624+00:00",
+      "captured_at": "2026-08-29T07:56:54.632979+00:00",
+      "views_count": 0,
+      "views_uniques": 0,
+      "clones_count": 0,
+      "clones_uniques": 0,
+      "actions_runs": 0,
+      "human_clones_count": 0,
+      "human_clones_uniques": 0,
+      "top_referrers": [],
+      "top_paths": [
+        {
+          "path": "/CSalcedoDataBI/BI_Challenges",
+          "title": "Overview",
+          "count": 1,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/BI_Challenges/issues",
+          "title": "/issues",
+          "count": 1,
+          "uniques": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-08-28",
+      "captured_at": "2026-08-29T07:56:54.632979+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
