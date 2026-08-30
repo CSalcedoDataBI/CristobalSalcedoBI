@@ -1411,7 +1411,7 @@
     },
     {
       "date": "2026-08-16",
-      "captured_at": "2026-08-29T07:56:53.779918+00:00",
+      "captured_at": "2026-08-30T06:51:47.715586+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -1501,7 +1501,7 @@
     },
     {
       "date": "2026-08-17",
-      "captured_at": "2026-08-29T07:56:53.779918+00:00",
+      "captured_at": "2026-08-30T06:51:47.715586+00:00",
       "views_count": 4,
       "views_uniques": 1,
       "clones_count": 0,
@@ -1591,7 +1591,7 @@
     },
     {
       "date": "2026-08-18",
-      "captured_at": "2026-08-29T07:56:53.779918+00:00",
+      "captured_at": "2026-08-30T06:51:47.715586+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 2,
@@ -1681,7 +1681,7 @@
     },
     {
       "date": "2026-08-19",
-      "captured_at": "2026-08-29T07:56:53.779918+00:00",
+      "captured_at": "2026-08-30T06:51:47.715586+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 2,
@@ -1771,7 +1771,7 @@
     },
     {
       "date": "2026-08-20",
-      "captured_at": "2026-08-29T07:56:53.779918+00:00",
+      "captured_at": "2026-08-30T06:51:47.715586+00:00",
       "views_count": 52,
       "views_uniques": 1,
       "clones_count": 4,
@@ -1861,7 +1861,7 @@
     },
     {
       "date": "2026-08-21",
-      "captured_at": "2026-08-29T07:56:53.779918+00:00",
+      "captured_at": "2026-08-30T06:51:47.715586+00:00",
       "views_count": 1,
       "views_uniques": 1,
       "clones_count": 0,
@@ -1951,7 +1951,7 @@
     },
     {
       "date": "2026-08-22",
-      "captured_at": "2026-08-29T07:56:53.779918+00:00",
+      "captured_at": "2026-08-30T06:51:47.715586+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 1,
@@ -2041,7 +2041,7 @@
     },
     {
       "date": "2026-08-23",
-      "captured_at": "2026-08-29T07:56:53.779918+00:00",
+      "captured_at": "2026-08-30T06:51:47.715586+00:00",
       "views_count": 23,
       "views_uniques": 2,
       "clones_count": 0,
@@ -2131,7 +2131,7 @@
     },
     {
       "date": "2026-08-24",
-      "captured_at": "2026-08-29T07:56:53.779918+00:00",
+      "captured_at": "2026-08-30T06:51:47.715586+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -2216,7 +2216,7 @@
     },
     {
       "date": "2026-08-25",
-      "captured_at": "2026-08-29T07:56:53.779918+00:00",
+      "captured_at": "2026-08-30T06:51:47.715586+00:00",
       "views_count": 3,
       "views_uniques": 2,
       "clones_count": 1,
@@ -2301,7 +2301,7 @@
     },
     {
       "date": "2026-08-26",
-      "captured_at": "2026-08-29T07:56:53.779918+00:00",
+      "captured_at": "2026-08-30T06:51:47.715586+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 1,
@@ -2386,7 +2386,7 @@
     },
     {
       "date": "2026-08-27",
-      "captured_at": "2026-08-29T07:56:53.779918+00:00",
+      "captured_at": "2026-08-30T06:51:47.715586+00:00",
       "views_count": 3,
       "views_uniques": 1,
       "clones_count": 15,
@@ -2471,14 +2471,14 @@
     },
     {
       "date": "2026-08-28",
-      "captured_at": "2026-08-29T07:56:53.779918+00:00",
-      "views_count": 0,
-      "views_uniques": 0,
-      "clones_count": 0,
-      "clones_uniques": 0,
+      "captured_at": "2026-08-30T06:51:47.715586+00:00",
+      "views_count": 71,
+      "views_uniques": 3,
+      "clones_count": 112,
+      "clones_uniques": 41,
       "actions_runs": 64,
-      "human_clones_count": 0,
-      "human_clones_uniques": 0,
+      "human_clones_count": 48,
+      "human_clones_uniques": 41,
       "top_referrers": [
         {
           "referrer": "github.com",
@@ -2551,6 +2551,96 @@
           "title": "/tree/main/examples/DAX-User-Defined-Functions/DAX User-Defined Functions.Report/definition",
           "count": 3,
           "uniques": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-08-29",
+      "captured_at": "2026-08-30T06:51:47.715586+00:00",
+      "views_count": 2,
+      "views_uniques": 1,
+      "clones_count": 71,
+      "clones_uniques": 28,
+      "actions_runs": 16,
+      "human_clones_count": 55,
+      "human_clones_uniques": 28,
+      "top_referrers": [
+        {
+          "referrer": "github.com",
+          "count": 146,
+          "uniques": 4
+        },
+        {
+          "referrer": "csalcedodatabi.com",
+          "count": 3,
+          "uniques": 1
+        },
+        {
+          "referrer": "perplexity.ai",
+          "count": 2,
+          "uniques": 1
+        }
+      ],
+      "top_paths": [
+        {
+          "path": "/CSalcedoDataBI/powerbi-pbip-tools",
+          "title": "Overview",
+          "count": 14,
+          "uniques": 9
+        },
+        {
+          "path": "/CSalcedoDataBI/powerbi-pbip-tools/tree/main/examples/DAX-User-Defined-Functions/DAX User-Defined Functions.SemanticModel",
+          "title": "/tree/main/examples/DAX-User-Defined-Functions/DAX User-Defined Functions.SemanticModel",
+          "count": 9,
+          "uniques": 2
+        },
+        {
+          "path": "/CSalcedoDataBI/powerbi-pbip-tools/tree/main/examples/DAX-User-Defined-Functions/DAX User-Defined Functions.SemanticModel/TMDLScripts",
+          "title": "/tree/main/examples/DAX-User-Defined-Functions/DAX User-Defined Functions.SemanticModel/TMDLScripts",
+          "count": 9,
+          "uniques": 2
+        },
+        {
+          "path": "/CSalcedoDataBI/powerbi-pbip-tools/tree/main/skills",
+          "title": "/tree/main/skills",
+          "count": 7,
+          "uniques": 3
+        },
+        {
+          "path": "/CSalcedoDataBI/powerbi-pbip-tools/tree/main/examples/DAX-User-Defined-Functions",
+          "title": "/tree/main/examples/DAX-User-Defined-Functions",
+          "count": 6,
+          "uniques": 2
+        },
+        {
+          "path": "/CSalcedoDataBI/powerbi-pbip-tools/tree/main/examples/DAX-User-Defined-Functions/DAX User-Defined Functions.SemanticModel/definition",
+          "title": "/tree/main/examples/DAX-User-Defined-Functions/DAX User-Defined Functions.SemanticModel/definition",
+          "count": 6,
+          "uniques": 2
+        },
+        {
+          "path": "/CSalcedoDataBI/powerbi-pbip-tools/tree/main/examples/DAX-User-Defined-Functions/DAX User-Defined Functions.SemanticModel/definition/tables",
+          "title": "/tree/main/examples/DAX-User-Defined-Functions/DAX User-Defined Functions.SemanticModel/definition/tables",
+          "count": 6,
+          "uniques": 2
+        },
+        {
+          "path": "/CSalcedoDataBI/powerbi-pbip-tools/tree/main/skills/skill-semantic-architect-powerbi",
+          "title": "/tree/main/skills/skill-semantic-architect-powerbi",
+          "count": 6,
+          "uniques": 2
+        },
+        {
+          "path": "/CSalcedoDataBI/powerbi-pbip-tools/tree/main",
+          "title": "/tree/main",
+          "count": 5,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/powerbi-pbip-tools/blob/main/examples/DAX-User-Defined-Functions/DAX User-Defined Functions.SemanticModel/definition/functions.tmdl",
+          "title": "/blob/main/examples/DAX-User-Defined-Functions/DAX User-Defined Functions.SemanticModel/definition/functions.tmdl",
+          "count": 4,
+          "uniques": 2
         }
       ]
     }
