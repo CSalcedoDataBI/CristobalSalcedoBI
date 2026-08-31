@@ -18,7 +18,7 @@ copian y pegan, y automatización que quita el trabajo manual de en medio.
 [contacto@csalcedodatabi.com](mailto:contacto@csalcedodatabi.com)
 
 <!-- actividad:start -->
-**29** artículos publicados · **28** plantillas Deneb · **10** repos públicos · **435** commits en 12 meses
+**30** artículos publicados · **29** plantillas Deneb · **12** repos públicos · **508** commits en 12 meses
 <!-- actividad:end -->
 
 ## Lo que hago, en imágenes
@@ -73,11 +73,11 @@ Las 25 plantillas, con su spec listo para copiar, en
 ### En el blog
 
 <!-- blog:start -->
+- [dax-for-agents: DAX para que tu agente deje de inventar](https://csalcedodatabi.com/blog/dax-for-agents/) — 26 ago 2026
 - [Probé si el Prep-for-AI cambia las respuestas de un Fabric Data Agent (y me llevé una sorpresa)](https://csalcedodatabi.com/blog/fabric-data-agent-prep-for-ai-prueba/) — 23 jul 2026
 - [Anatomía de un Fabric Data Agent: las 8 partes que escribes para que responda bien](https://csalcedodatabi.com/blog/anatomia-fabric-data-agent/) — 21 jul 2026
 - [agentic-board: agentes de Claude Code en tu board de GitHub](https://csalcedodatabi.com/blog/agentic-board/) — 30 jun 2026
 - [DAX User-Defined Functions: la referencia que guardas y reutilizas](https://csalcedodatabi.com/blog/dax-user-defined-functions-referencia/) — 8 jun 2026
-- [Cómo construí mi propio plugin para Claude Code que genera tableros desde Power BI](https://csalcedodatabi.com/blog/plugin-claude-code-dashboard-powerbi-mcp/) — 29 may 2026
 <!-- blog:end -->
 
 Todo en [csalcedodatabi.com/blog](https://csalcedodatabi.com/blog)
@@ -85,11 +85,11 @@ Todo en [csalcedodatabi.com/blog](https://csalcedodatabi.com/blog)
 ### Plantillas nuevas en la galería
 
 <!-- plantillas:start -->
+- [Grilla Termometros IBCS](https://github.com/CSalcedoDataBI/PowerBI-Deneb/tree/main/Grilla_Termometros_IBCS) — 24 ago 2026
 - [Linea Elegante Interanual](https://github.com/CSalcedoDataBI/PowerBI-Deneb/tree/main/Linea_Elegante_Interanual) — 18 ago 2026
 - [Tarjetas Bullet IBCS](https://github.com/CSalcedoDataBI/PowerBI-Deneb/tree/main/Tarjetas_Bullet_IBCS) — 17 ago 2026
 - [Combo Barras Linea](https://github.com/CSalcedoDataBI/PowerBI-Deneb/tree/main/Combo_Barras_Linea) — 14 ago 2026
 - [Calendar Heatmap](https://github.com/CSalcedoDataBI/PowerBI-Deneb/tree/main/Calendar_Heatmap) — 12 ago 2026
-- [Ranking Bump Chart](https://github.com/CSalcedoDataBI/PowerBI-Deneb/tree/main/Ranking_Bump_Chart) — 8 ago 2026
 <!-- plantillas:end -->
 
 Todas en [la galería](https://csalcedodatabi.com/deneb)
@@ -97,8 +97,10 @@ Todas en [la galería](https://csalcedodatabi.com/deneb)
 ### Últimas versiones de las herramientas
 
 <!-- releases:start -->
+- [dax-for-agents v0.6.0](https://github.com/CSalcedoDataBI/dax-for-agents/releases/tag/v0.6.0) — 29 ago 2026
+- [agentic-board v0.38.0](https://github.com/CSalcedoDataBI/agentic-board/releases/tag/v0.38.0) — 28 ago 2026
+- [dax-for-agents v0.5.0](https://github.com/CSalcedoDataBI/dax-for-agents/releases/tag/v0.5.0) — 27 ago 2026
 - [agentic-board v0.37.0](https://github.com/CSalcedoDataBI/agentic-board/releases/tag/v0.37.0) — 20 ago 2026
-- [agentic-board v0.36.0](https://github.com/CSalcedoDataBI/agentic-board/releases/tag/v0.36.0) — 10 ago 2026
 <!-- releases:end -->
 
 ## Cómo se mantiene esto
