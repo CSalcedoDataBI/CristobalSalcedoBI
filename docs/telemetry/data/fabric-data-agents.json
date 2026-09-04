@@ -1663,7 +1663,7 @@
     },
     {
       "date": "2026-08-21",
-      "captured_at": "2026-09-03T05:57:56.046963+00:00",
+      "captured_at": "2026-09-04T06:05:05.847652+00:00",
       "views_count": 3,
       "views_uniques": 1,
       "clones_count": 1,
@@ -1689,7 +1689,7 @@
     },
     {
       "date": "2026-08-22",
-      "captured_at": "2026-09-03T05:57:56.046963+00:00",
+      "captured_at": "2026-09-04T06:05:05.847652+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -1732,7 +1732,7 @@
     },
     {
       "date": "2026-08-23",
-      "captured_at": "2026-09-03T05:57:56.046963+00:00",
+      "captured_at": "2026-09-04T06:05:05.847652+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -1775,7 +1775,7 @@
     },
     {
       "date": "2026-08-24",
-      "captured_at": "2026-09-03T05:57:56.046963+00:00",
+      "captured_at": "2026-09-04T06:05:05.847652+00:00",
       "views_count": 2,
       "views_uniques": 1,
       "clones_count": 1,
@@ -1818,7 +1818,7 @@
     },
     {
       "date": "2026-08-25",
-      "captured_at": "2026-09-03T05:57:56.046963+00:00",
+      "captured_at": "2026-09-04T06:05:05.847652+00:00",
       "views_count": 1,
       "views_uniques": 1,
       "clones_count": 3,
@@ -1878,7 +1878,7 @@
     },
     {
       "date": "2026-08-26",
-      "captured_at": "2026-09-03T05:57:56.046963+00:00",
+      "captured_at": "2026-09-04T06:05:05.847652+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 1,
@@ -1938,7 +1938,7 @@
     },
     {
       "date": "2026-08-27",
-      "captured_at": "2026-09-03T05:57:56.046963+00:00",
+      "captured_at": "2026-09-04T06:05:05.847652+00:00",
       "views_count": 10,
       "views_uniques": 2,
       "clones_count": 6,
@@ -2010,7 +2010,7 @@
     },
     {
       "date": "2026-08-28",
-      "captured_at": "2026-09-03T05:57:56.046963+00:00",
+      "captured_at": "2026-09-04T06:05:05.847652+00:00",
       "views_count": 11,
       "views_uniques": 3,
       "clones_count": 4,
@@ -2082,7 +2082,7 @@
     },
     {
       "date": "2026-08-29",
-      "captured_at": "2026-09-03T05:57:56.046963+00:00",
+      "captured_at": "2026-09-04T06:05:05.847652+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 11,
@@ -2167,7 +2167,7 @@
     },
     {
       "date": "2026-08-30",
-      "captured_at": "2026-09-03T05:57:56.046963+00:00",
+      "captured_at": "2026-09-04T06:05:05.847652+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -2252,7 +2252,7 @@
     },
     {
       "date": "2026-08-31",
-      "captured_at": "2026-09-03T05:57:56.046963+00:00",
+      "captured_at": "2026-09-04T06:05:05.847652+00:00",
       "views_count": 3,
       "views_uniques": 1,
       "clones_count": 3,
@@ -2337,7 +2337,7 @@
     },
     {
       "date": "2026-09-01",
-      "captured_at": "2026-09-03T05:57:56.046963+00:00",
+      "captured_at": "2026-09-04T06:05:05.847652+00:00",
       "views_count": 1,
       "views_uniques": 1,
       "clones_count": 1,
@@ -2422,7 +2422,7 @@
     },
     {
       "date": "2026-09-02",
-      "captured_at": "2026-09-03T05:57:56.046963+00:00",
+      "captured_at": "2026-09-04T06:05:05.847652+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -2430,6 +2430,96 @@
       "actions_runs": 0,
       "human_clones_count": 0,
       "human_clones_uniques": 0,
+      "top_referrers": [
+        {
+          "referrer": "github.com",
+          "count": 24,
+          "uniques": 3
+        },
+        {
+          "referrer": "Bing",
+          "count": 2,
+          "uniques": 1
+        },
+        {
+          "referrer": "linkedin.com",
+          "count": 1,
+          "uniques": 1
+        }
+      ],
+      "top_paths": [
+        {
+          "path": "/CSalcedoDataBI/fabric-data-agents",
+          "title": "Overview",
+          "count": 13,
+          "uniques": 4
+        },
+        {
+          "path": "/CSalcedoDataBI/fabric-data-agents/blob/main/examples/contoso-retail/data-agent/verified-answers.md",
+          "title": "/blob/main/examples/contoso-retail/data-agent/verified-answers.md",
+          "count": 3,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/fabric-data-agents/issues",
+          "title": "/issues",
+          "count": 2,
+          "uniques": 2
+        },
+        {
+          "path": "/CSalcedoDataBI/fabric-data-agents/tree/main/examples/contoso-retail",
+          "title": "/tree/main/examples/contoso-retail",
+          "count": 2,
+          "uniques": 2
+        },
+        {
+          "path": "/CSalcedoDataBI/fabric-data-agents/blob/main/examples/contoso-retail",
+          "title": "/blob/main/examples/contoso-retail",
+          "count": 1,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/fabric-data-agents/blob/main/examples/contoso-retail/data-agent/prep-for-ai-reference.md",
+          "title": "/blob/main/examples/contoso-retail/data-agent/prep-for-ai-reference.md",
+          "count": 1,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/fabric-data-agents/blob/main/examples/contoso-retail/model/ContosoRetail.pbip",
+          "title": "/blob/main/examples/contoso-retail/model/ContosoRetail.pbip",
+          "count": 1,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/fabric-data-agents/blob/main/examples/contoso-retail/model/ContosoRetail.pbix",
+          "title": "/blob/main/examples/contoso-retail/model/ContosoRetail.pbix",
+          "count": 1,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/fabric-data-agents/branches",
+          "title": "/branches",
+          "count": 1,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/fabric-data-agents/projects",
+          "title": "/projects",
+          "count": 1,
+          "uniques": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-03",
+      "captured_at": "2026-09-04T06:05:05.847652+00:00",
+      "views_count": 0,
+      "views_uniques": 0,
+      "clones_count": 1,
+      "clones_uniques": 1,
+      "actions_runs": 0,
+      "human_clones_count": 1,
+      "human_clones_uniques": 1,
       "top_referrers": [
         {
           "referrer": "github.com",

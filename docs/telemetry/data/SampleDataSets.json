@@ -763,7 +763,7 @@
     },
     {
       "date": "2026-08-20",
-      "captured_at": "2026-09-03T05:57:58.772456+00:00",
+      "captured_at": "2026-09-04T06:05:07.480100+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 1,
@@ -783,7 +783,7 @@
     },
     {
       "date": "2026-08-21",
-      "captured_at": "2026-09-03T05:57:58.772456+00:00",
+      "captured_at": "2026-09-04T06:05:07.480100+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 1,
@@ -803,7 +803,7 @@
     },
     {
       "date": "2026-08-22",
-      "captured_at": "2026-09-03T05:57:58.772456+00:00",
+      "captured_at": "2026-09-04T06:05:07.480100+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 2,
@@ -823,7 +823,7 @@
     },
     {
       "date": "2026-08-23",
-      "captured_at": "2026-09-03T05:57:58.772456+00:00",
+      "captured_at": "2026-09-04T06:05:07.480100+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -843,7 +843,7 @@
     },
     {
       "date": "2026-08-24",
-      "captured_at": "2026-09-03T05:57:58.772456+00:00",
+      "captured_at": "2026-09-04T06:05:07.480100+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 1,
@@ -863,7 +863,7 @@
     },
     {
       "date": "2026-08-25",
-      "captured_at": "2026-09-03T05:57:58.772456+00:00",
+      "captured_at": "2026-09-04T06:05:07.480100+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 1,
@@ -883,7 +883,7 @@
     },
     {
       "date": "2026-08-26",
-      "captured_at": "2026-09-03T05:57:58.772456+00:00",
+      "captured_at": "2026-09-04T06:05:07.480100+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -896,7 +896,7 @@
     },
     {
       "date": "2026-08-27",
-      "captured_at": "2026-09-03T05:57:58.772456+00:00",
+      "captured_at": "2026-09-04T06:05:07.480100+00:00",
       "views_count": 4,
       "views_uniques": 1,
       "clones_count": 0,
@@ -940,7 +940,7 @@
     },
     {
       "date": "2026-08-28",
-      "captured_at": "2026-09-03T05:57:58.772456+00:00",
+      "captured_at": "2026-09-04T06:05:07.480100+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -984,7 +984,7 @@
     },
     {
       "date": "2026-08-29",
-      "captured_at": "2026-09-03T05:57:58.772456+00:00",
+      "captured_at": "2026-09-04T06:05:07.480100+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -1028,7 +1028,7 @@
     },
     {
       "date": "2026-08-30",
-      "captured_at": "2026-09-03T05:57:58.772456+00:00",
+      "captured_at": "2026-09-04T06:05:07.480100+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -1072,7 +1072,7 @@
     },
     {
       "date": "2026-08-31",
-      "captured_at": "2026-09-03T05:57:58.772456+00:00",
+      "captured_at": "2026-09-04T06:05:07.480100+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -1116,7 +1116,7 @@
     },
     {
       "date": "2026-09-01",
-      "captured_at": "2026-09-03T05:57:58.772456+00:00",
+      "captured_at": "2026-09-04T06:05:07.480100+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 2,
@@ -1160,7 +1160,7 @@
     },
     {
       "date": "2026-09-02",
-      "captured_at": "2026-09-03T05:57:58.772456+00:00",
+      "captured_at": "2026-09-04T06:05:07.480100+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 7,
@@ -1168,6 +1168,50 @@
       "actions_runs": 2,
       "human_clones_count": 5,
       "human_clones_uniques": 4,
+      "top_referrers": [
+        {
+          "referrer": "github.com",
+          "count": 4,
+          "uniques": 1
+        }
+      ],
+      "top_paths": [
+        {
+          "path": "/CSalcedoDataBI/SampleDataSets",
+          "title": "Overview",
+          "count": 1,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/SampleDataSets/tree/main",
+          "title": "/tree/main",
+          "count": 1,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/SampleDataSets/tree/main/dax-lab",
+          "title": "/tree/main/dax-lab",
+          "count": 1,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/SampleDataSets/tree/main/dax-lab/claves-huerfanas",
+          "title": "/tree/main/dax-lab/claves-huerfanas",
+          "count": 1,
+          "uniques": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-03",
+      "captured_at": "2026-09-04T06:05:07.480100+00:00",
+      "views_count": 0,
+      "views_uniques": 0,
+      "clones_count": 0,
+      "clones_uniques": 0,
+      "actions_runs": 0,
+      "human_clones_count": 0,
+      "human_clones_uniques": 0,
       "top_referrers": [
         {
           "referrer": "github.com",
