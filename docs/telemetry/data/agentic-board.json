@@ -1848,7 +1848,7 @@
     },
     {
       "date": "2026-08-23",
-      "captured_at": "2026-09-05T05:54:16.443036+00:00",
+      "captured_at": "2026-09-06T06:06:40.394322+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -1898,7 +1898,7 @@
     },
     {
       "date": "2026-08-24",
-      "captured_at": "2026-09-05T05:54:16.443036+00:00",
+      "captured_at": "2026-09-06T06:06:40.394322+00:00",
       "views_count": 1,
       "views_uniques": 1,
       "clones_count": 2,
@@ -1948,7 +1948,7 @@
     },
     {
       "date": "2026-08-25",
-      "captured_at": "2026-09-05T05:54:16.443036+00:00",
+      "captured_at": "2026-09-06T06:06:40.394322+00:00",
       "views_count": 4,
       "views_uniques": 1,
       "clones_count": 3,
@@ -2003,7 +2003,7 @@
     },
     {
       "date": "2026-08-26",
-      "captured_at": "2026-09-05T05:54:16.443036+00:00",
+      "captured_at": "2026-09-06T06:06:40.394322+00:00",
       "views_count": 1,
       "views_uniques": 1,
       "clones_count": 52,
@@ -2070,7 +2070,7 @@
     },
     {
       "date": "2026-08-27",
-      "captured_at": "2026-09-05T05:54:16.443036+00:00",
+      "captured_at": "2026-09-06T06:06:40.394322+00:00",
       "views_count": 2,
       "views_uniques": 2,
       "clones_count": 11,
@@ -2137,7 +2137,7 @@
     },
     {
       "date": "2026-08-28",
-      "captured_at": "2026-09-05T05:54:16.443036+00:00",
+      "captured_at": "2026-09-06T06:06:40.394322+00:00",
       "views_count": 13,
       "views_uniques": 2,
       "clones_count": 67,
@@ -2204,7 +2204,7 @@
     },
     {
       "date": "2026-08-29",
-      "captured_at": "2026-09-05T05:54:16.443036+00:00",
+      "captured_at": "2026-09-06T06:06:40.394322+00:00",
       "views_count": 1,
       "views_uniques": 1,
       "clones_count": 22,
@@ -2289,7 +2289,7 @@
     },
     {
       "date": "2026-08-30",
-      "captured_at": "2026-09-05T05:54:16.443036+00:00",
+      "captured_at": "2026-09-06T06:06:40.394322+00:00",
       "views_count": 1,
       "views_uniques": 1,
       "clones_count": 8,
@@ -2374,7 +2374,7 @@
     },
     {
       "date": "2026-08-31",
-      "captured_at": "2026-09-05T05:54:16.443036+00:00",
+      "captured_at": "2026-09-06T06:06:40.394322+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 75,
@@ -2459,7 +2459,7 @@
     },
     {
       "date": "2026-09-01",
-      "captured_at": "2026-09-05T05:54:16.443036+00:00",
+      "captured_at": "2026-09-06T06:06:40.394322+00:00",
       "views_count": 5,
       "views_uniques": 2,
       "clones_count": 107,
@@ -2544,7 +2544,7 @@
     },
     {
       "date": "2026-09-02",
-      "captured_at": "2026-09-05T05:54:16.443036+00:00",
+      "captured_at": "2026-09-06T06:06:40.394322+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 8,
@@ -2629,7 +2629,7 @@
     },
     {
       "date": "2026-09-03",
-      "captured_at": "2026-09-05T05:54:16.443036+00:00",
+      "captured_at": "2026-09-06T06:06:40.394322+00:00",
       "views_count": 1,
       "views_uniques": 1,
       "clones_count": 11,
@@ -2714,14 +2714,14 @@
     },
     {
       "date": "2026-09-04",
-      "captured_at": "2026-09-05T05:54:16.443036+00:00",
+      "captured_at": "2026-09-06T06:06:40.394322+00:00",
       "views_count": 0,
       "views_uniques": 0,
-      "clones_count": 0,
-      "clones_uniques": 0,
+      "clones_count": 23,
+      "clones_uniques": 11,
       "actions_runs": 0,
-      "human_clones_count": 0,
-      "human_clones_uniques": 0,
+      "human_clones_count": 23,
+      "human_clones_uniques": 11,
       "top_referrers": [
         {
           "referrer": "github.com",
@@ -2792,6 +2792,91 @@
         {
           "path": "/CSalcedoDataBI/agentic-board/issues/406",
           "title": "/issues/406",
+          "count": 1,
+          "uniques": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-05",
+      "captured_at": "2026-09-06T06:06:40.394322+00:00",
+      "views_count": 0,
+      "views_uniques": 0,
+      "clones_count": 0,
+      "clones_uniques": 0,
+      "actions_runs": 0,
+      "human_clones_count": 0,
+      "human_clones_uniques": 0,
+      "top_referrers": [
+        {
+          "referrer": "github.com",
+          "count": 8,
+          "uniques": 4
+        },
+        {
+          "referrer": "DuckDuckGo",
+          "count": 1,
+          "uniques": 1
+        }
+      ],
+      "top_paths": [
+        {
+          "path": "/CSalcedoDataBI/agentic-board",
+          "title": "Overview",
+          "count": 7,
+          "uniques": 6
+        },
+        {
+          "path": "/CSalcedoDataBI/agentic-board/pull/645",
+          "title": "/pull/645",
+          "count": 6,
+          "uniques": 2
+        },
+        {
+          "path": "/CSalcedoDataBI/agentic-board/issues/654",
+          "title": "/issues/654",
+          "count": 3,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/agentic-board/issues",
+          "title": "/issues",
+          "count": 2,
+          "uniques": 2
+        },
+        {
+          "path": "/CSalcedoDataBI/agentic-board/issues/388",
+          "title": "/issues/388",
+          "count": 2,
+          "uniques": 2
+        },
+        {
+          "path": "/CSalcedoDataBI/agentic-board/blob/3f6e996fad288a188b5b8ebfe78103822bd14a1c/plugins/agentic-board/scripts/Board-ReviewGate.ps1",
+          "title": "/blob/3f6e996fad288a188b5b8ebfe78103822bd14a1c/plugins/agentic-board/scripts/Board-ReviewGate.ps1",
+          "count": 1,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/agentic-board/issues/383",
+          "title": "/issues/383",
+          "count": 1,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/agentic-board/issues/406",
+          "title": "/issues/406",
+          "count": 1,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/agentic-board/issues/426",
+          "title": "/issues/426",
+          "count": 1,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/agentic-board/issues/557",
+          "title": "/issues/557",
           "count": 1,
           "uniques": 1
         }
