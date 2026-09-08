@@ -863,7 +863,7 @@
     },
     {
       "date": "2026-08-25",
-      "captured_at": "2026-09-07T06:13:58.692636+00:00",
+      "captured_at": "2026-09-08T06:03:45.543691+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 1,
@@ -883,7 +883,7 @@
     },
     {
       "date": "2026-08-26",
-      "captured_at": "2026-09-07T06:13:58.692636+00:00",
+      "captured_at": "2026-09-08T06:03:45.543691+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -896,7 +896,7 @@
     },
     {
       "date": "2026-08-27",
-      "captured_at": "2026-09-07T06:13:58.692636+00:00",
+      "captured_at": "2026-09-08T06:03:45.543691+00:00",
       "views_count": 4,
       "views_uniques": 1,
       "clones_count": 0,
@@ -940,7 +940,7 @@
     },
     {
       "date": "2026-08-28",
-      "captured_at": "2026-09-07T06:13:58.692636+00:00",
+      "captured_at": "2026-09-08T06:03:45.543691+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -984,7 +984,7 @@
     },
     {
       "date": "2026-08-29",
-      "captured_at": "2026-09-07T06:13:58.692636+00:00",
+      "captured_at": "2026-09-08T06:03:45.543691+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -1028,7 +1028,7 @@
     },
     {
       "date": "2026-08-30",
-      "captured_at": "2026-09-07T06:13:58.692636+00:00",
+      "captured_at": "2026-09-08T06:03:45.543691+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -1072,7 +1072,7 @@
     },
     {
       "date": "2026-08-31",
-      "captured_at": "2026-09-07T06:13:58.692636+00:00",
+      "captured_at": "2026-09-08T06:03:45.543691+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -1116,7 +1116,7 @@
     },
     {
       "date": "2026-09-01",
-      "captured_at": "2026-09-07T06:13:58.692636+00:00",
+      "captured_at": "2026-09-08T06:03:45.543691+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 2,
@@ -1160,7 +1160,7 @@
     },
     {
       "date": "2026-09-02",
-      "captured_at": "2026-09-07T06:13:58.692636+00:00",
+      "captured_at": "2026-09-08T06:03:45.543691+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 7,
@@ -1204,7 +1204,7 @@
     },
     {
       "date": "2026-09-03",
-      "captured_at": "2026-09-07T06:13:58.692636+00:00",
+      "captured_at": "2026-09-08T06:03:45.543691+00:00",
       "views_count": 8,
       "views_uniques": 1,
       "clones_count": 13,
@@ -1248,7 +1248,7 @@
     },
     {
       "date": "2026-09-04",
-      "captured_at": "2026-09-07T06:13:58.692636+00:00",
+      "captured_at": "2026-09-08T06:03:45.543691+00:00",
       "views_count": 8,
       "views_uniques": 1,
       "clones_count": 1,
@@ -1304,7 +1304,7 @@
     },
     {
       "date": "2026-09-05",
-      "captured_at": "2026-09-07T06:13:58.692636+00:00",
+      "captured_at": "2026-09-08T06:03:45.543691+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 2,
@@ -1384,14 +1384,14 @@
     },
     {
       "date": "2026-09-06",
-      "captured_at": "2026-09-07T06:13:58.692636+00:00",
-      "views_count": 0,
-      "views_uniques": 0,
-      "clones_count": 0,
-      "clones_uniques": 0,
+      "captured_at": "2026-09-08T06:03:45.543691+00:00",
+      "views_count": 6,
+      "views_uniques": 1,
+      "clones_count": 8,
+      "clones_uniques": 6,
       "actions_runs": 0,
-      "human_clones_count": 0,
-      "human_clones_uniques": 0,
+      "human_clones_count": 8,
+      "human_clones_uniques": 6,
       "top_referrers": [
         {
           "referrer": "github.com",
@@ -1457,6 +1457,91 @@
         {
           "path": "/CSalcedoDataBI/SampleDataSets/blob/main/contoso-retail/FactSales.parquet",
           "title": "/blob/main/contoso-retail/FactSales.parquet",
+          "count": 1,
+          "uniques": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-07",
+      "captured_at": "2026-09-08T06:03:45.543691+00:00",
+      "views_count": 2,
+      "views_uniques": 1,
+      "clones_count": 3,
+      "clones_uniques": 2,
+      "actions_runs": 1,
+      "human_clones_count": 2,
+      "human_clones_uniques": 2,
+      "top_referrers": [
+        {
+          "referrer": "github.com",
+          "count": 22,
+          "uniques": 4
+        },
+        {
+          "referrer": "claude.ai",
+          "count": 6,
+          "uniques": 1
+        }
+      ],
+      "top_paths": [
+        {
+          "path": "/CSalcedoDataBI/SampleDataSets/tree/main/contoso-retail",
+          "title": "/tree/main/contoso-retail",
+          "count": 5,
+          "uniques": 3
+        },
+        {
+          "path": "/CSalcedoDataBI/SampleDataSets",
+          "title": "Overview",
+          "count": 3,
+          "uniques": 2
+        },
+        {
+          "path": "/CSalcedoDataBI/SampleDataSets/blob/main/contoso-retail/DimCurrencyExchange.parquet",
+          "title": "/blob/main/contoso-retail/DimCurrencyExchange.parquet",
+          "count": 3,
+          "uniques": 2
+        },
+        {
+          "path": "/CSalcedoDataBI/SampleDataSets/tree/main/dax-lab",
+          "title": "/tree/main/dax-lab",
+          "count": 3,
+          "uniques": 2
+        },
+        {
+          "path": "/CSalcedoDataBI/SampleDataSets/tree/main/dax-lab/claves-huerfanas",
+          "title": "/tree/main/dax-lab/claves-huerfanas",
+          "count": 3,
+          "uniques": 2
+        },
+        {
+          "path": "/CSalcedoDataBI/SampleDataSets/blob/main/contoso-retail/DimStore.parquet",
+          "title": "/blob/main/contoso-retail/DimStore.parquet",
+          "count": 2,
+          "uniques": 2
+        },
+        {
+          "path": "/CSalcedoDataBI/SampleDataSets/blame/main/contoso-retail/DimCurrencyExchange.parquet",
+          "title": "/blame/main/contoso-retail/DimCurrencyExchange.parquet",
+          "count": 1,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/SampleDataSets/blob/main/contoso-retail/DimCurrency.parquet",
+          "title": "/blob/main/contoso-retail/DimCurrency.parquet",
+          "count": 1,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/SampleDataSets/blob/main/contoso-retail/DimCustomer.parquet",
+          "title": "/blob/main/contoso-retail/DimCustomer.parquet",
+          "count": 1,
+          "uniques": 1
+        },
+        {
+          "path": "/CSalcedoDataBI/SampleDataSets/blob/main/contoso-retail/DimDate.parquet",
+          "title": "/blob/main/contoso-retail/DimDate.parquet",
           "count": 1,
           "uniques": 1
         }

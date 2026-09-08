@@ -524,7 +524,7 @@
     },
     {
       "date": "2026-08-25",
-      "captured_at": "2026-09-07T06:13:59.225670+00:00",
+      "captured_at": "2026-09-08T06:03:46.732519+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 1,
@@ -537,7 +537,7 @@
     },
     {
       "date": "2026-08-26",
-      "captured_at": "2026-09-07T06:13:59.225670+00:00",
+      "captured_at": "2026-09-08T06:03:46.732519+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -550,7 +550,7 @@
     },
     {
       "date": "2026-08-27",
-      "captured_at": "2026-09-07T06:13:59.225670+00:00",
+      "captured_at": "2026-09-08T06:03:46.732519+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 3,
@@ -563,7 +563,7 @@
     },
     {
       "date": "2026-08-28",
-      "captured_at": "2026-09-07T06:13:59.225670+00:00",
+      "captured_at": "2026-09-08T06:03:46.732519+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -576,7 +576,7 @@
     },
     {
       "date": "2026-08-29",
-      "captured_at": "2026-09-07T06:13:59.225670+00:00",
+      "captured_at": "2026-09-08T06:03:46.732519+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -589,7 +589,7 @@
     },
     {
       "date": "2026-08-30",
-      "captured_at": "2026-09-07T06:13:59.225670+00:00",
+      "captured_at": "2026-09-08T06:03:46.732519+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -602,7 +602,7 @@
     },
     {
       "date": "2026-08-31",
-      "captured_at": "2026-09-07T06:13:59.225670+00:00",
+      "captured_at": "2026-09-08T06:03:46.732519+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 1,
@@ -615,7 +615,7 @@
     },
     {
       "date": "2026-09-01",
-      "captured_at": "2026-09-07T06:13:59.225670+00:00",
+      "captured_at": "2026-09-08T06:03:46.732519+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -628,7 +628,7 @@
     },
     {
       "date": "2026-09-02",
-      "captured_at": "2026-09-07T06:13:59.225670+00:00",
+      "captured_at": "2026-09-08T06:03:46.732519+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 1,
@@ -641,7 +641,7 @@
     },
     {
       "date": "2026-09-03",
-      "captured_at": "2026-09-07T06:13:59.225670+00:00",
+      "captured_at": "2026-09-08T06:03:46.732519+00:00",
       "views_count": 1,
       "views_uniques": 1,
       "clones_count": 1,
@@ -654,7 +654,7 @@
     },
     {
       "date": "2026-09-04",
-      "captured_at": "2026-09-07T06:13:59.225670+00:00",
+      "captured_at": "2026-09-08T06:03:46.732519+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 2,
@@ -680,7 +680,7 @@
     },
     {
       "date": "2026-09-05",
-      "captured_at": "2026-09-07T06:13:59.225670+00:00",
+      "captured_at": "2026-09-08T06:03:46.732519+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
@@ -706,7 +706,33 @@
     },
     {
       "date": "2026-09-06",
-      "captured_at": "2026-09-07T06:13:59.225670+00:00",
+      "captured_at": "2026-09-08T06:03:46.732519+00:00",
+      "views_count": 0,
+      "views_uniques": 0,
+      "clones_count": 9,
+      "clones_uniques": 7,
+      "actions_runs": 0,
+      "human_clones_count": 9,
+      "human_clones_uniques": 7,
+      "top_referrers": [
+        {
+          "referrer": "github.com",
+          "count": 1,
+          "uniques": 1
+        }
+      ],
+      "top_paths": [
+        {
+          "path": "/CSalcedoDataBI/PowerBI-and-Fabric",
+          "title": "Overview",
+          "count": 1,
+          "uniques": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-07",
+      "captured_at": "2026-09-08T06:03:46.732519+00:00",
       "views_count": 0,
       "views_uniques": 0,
       "clones_count": 0,
